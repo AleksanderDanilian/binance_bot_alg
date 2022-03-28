@@ -6,7 +6,7 @@ import logging
 import time
 import os
 
-import schedule
+# import schedule
 # import APSheduler
 
 from datetime import datetime
