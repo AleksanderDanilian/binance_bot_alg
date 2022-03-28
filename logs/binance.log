@@ -1,0 +1,637 @@
+2022-03-26 17:43:01,459 [DEBUG] 
+    Текущее время: 2022-03-26 17:43:01 1648305781
+    Время сервера: 2022-03-26 17:43:00 1648305780
+    Разница: 1.00000000 ТЕКУЩЕЕ ВРЕМЯ ВЫШЕ
+    Бот будет работать, как будто сейчас: 2022-03-26 17:43:00 1648305780
+
+2022-03-26 17:43:02,864 [INFO ] Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2022-03-26 17:43:02,864 [INFO ] Added job "run_main" to job store "default"
+2022-03-26 17:43:02,864 [INFO ] Scheduler started
+2022-03-26 17:43:02,864 [DEBUG] Looking for jobs to run
+2022-03-26 17:43:02,864 [DEBUG] Next wakeup is due at 2022-03-26 15:33:02.864827+00:00 (in 3000.000000 seconds)
+2022-03-26 18:33:02,890 [DEBUG] Looking for jobs to run
+2022-03-26 18:33:02,912 [INFO ] Running job "run_main (trigger: interval[0:50:00], next run at: 2022-03-26 15:33:02 UTC)" (scheduled at 2022-03-26 15:33:02.864827+00:00)
+2022-03-26 18:33:02,927 [DEBUG] Next wakeup is due at 2022-03-26 16:23:02.864827+00:00 (in 2999.974772 seconds)
+2022-03-26 18:33:02,959 [DEBUG] Получаем все неисполненные ордера по БД
+2022-03-26 18:33:02,959 [DEBUG] Неисполненных ордеров в БД нет
+2022-03-26 18:33:02,959 [DEBUG] Получаем из настроек все пары, по которым нет неисполненных ордеров
+2022-03-26 18:33:02,959 [DEBUG] Найдены пары, по которым нет неисполненных ордеров: ['BTCUSDT']
+2022-03-26 18:33:02,959 [DEBUG] Работаем с парой BTCUSDT
+2022-03-26 18:33:02,974 [DEBUG] Starting new HTTPS connection (1): testnet.binance.vision:443
+2022-03-26 18:33:03,960 [DEBUG] https://testnet.binance.vision:443 "GET /api/v3/account?timestamp=1648308780000&signature=f23c74247b64e642956b5255b9c37d7782d1e352ee89a178bd294ec68d189d6b HTTP/1.1" 200 260
+2022-03-26 18:33:03,975 [DEBUG] Баланс ['BTC:1.00000000', 'USDT:10031.46834474']
+2022-03-26 18:33:03,975 [DEBUG] Starting new HTTPS connection (1): testnet.binance.vision:443
+2022-03-26 18:33:04,314 [DEBUG] https://testnet.binance.vision:443 "GET /api/v1/depth?symbol=BTCUSDT&limit=1000 HTTP/1.1" 200 2065
+2022-03-26 18:33:04,330 [DEBUG] 
+                                Средняя цена 38249.96184211, 
+                                после приведения 38249.96000000, 
+                                объем после приведения 0.02611700,
+                                итоговый размер сделки 998.97420532
+                                
+2022-03-26 18:33:04,330 [DEBUG] Рассчитан ордер на покупку(ждем сигнала): кол-во 0.02611700, курс: 38249.96000000
+2022-03-26 18:33:04,330 [DEBUG] Starting new HTTPS connection (1): testnet.binance.vision:443
+2022-03-26 18:33:05,017 [DEBUG] https://testnet.binance.vision:443 "GET /api/v1/klines?symbol=BTCUSDT&interval=1h&limit=1000&startTime=1640998800000 HTTP/1.1" 200 35256
+2022-03-26 18:33:05,465 [INFO ] кол-во ПОКПУАЕМОЙ ХРЕНИ 1 0.026117
+2022-03-26 18:33:05,465 [DEBUG] Starting new HTTPS connection (1): testnet.binance.vision:443
+2022-03-26 18:33:05,782 [DEBUG] https://testnet.binance.vision:443 "POST /api/v3/order HTTP/1.1" 200 306
+2022-03-26 18:33:05,782 [INFO ] кол-во ПОКПУАЕМОЙ ХРЕНИ 2 0.026117
+2022-03-26 18:33:05,782 [DEBUG] Starting new HTTPS connection (1): testnet.binance.vision:443
+2022-03-26 18:33:06,183 [DEBUG] https://testnet.binance.vision:443 "GET /api/v3/account?timestamp=1648308783000&signature=b737cb7f8e000aa592dfddf91eac89a9571ead9f80b796027a039ec9349598da HTTP/1.1" 200 266
+2022-03-26 18:33:06,183 [DEBUG] ____Баланс ['BTC:1.02611700', 'USDT:8876.28340019']
+2022-03-26 18:33:06,183 [INFO ] Создан ордер на покупку {'symbol': 'BTCUSDT', 'orderId': 12125666, 'orderListId': -1, 'clientOrderId': 'A72pQZn2DEEgTXS8xhw1c3', 'transactTime': 1648308784543, 'price': '0.00000000', 'origQty': '0.02611700', 'executedQty': '0.02611700', 'cummulativeQuoteQty': '1155.18494455', 'status': 'FILLED', 'timeInForce': 'GTC', 'type': 'MARKET', 'side': 'BUY', 'fills': [{'price': '44231.15000000', 'qty': '0.02455700', 'commission': '0.00000000', 'commissionAsset': 'BTC', 'tradeId': 3841700}, {'price': '44231.15000000', 'qty': '0.00156000', 'commission': '0.00000000', 'commissionAsset': 'BTC', 'tradeId': 3841701}]}, сигнал buy
+2022-03-26 18:33:06,221 [INFO ] Job "run_main (trigger: interval[0:50:00], next run at: 2022-03-26 16:23:02 UTC)" executed successfully
+2022-03-26 19:23:01,838 [DEBUG] Looking for jobs to run
+2022-03-26 19:23:01,869 [DEBUG] Next wakeup is due at 2022-03-26 16:23:02.864827+00:00 (in 1.011019 seconds)
+2022-03-26 19:23:02,887 [DEBUG] Looking for jobs to run
+2022-03-26 19:23:02,893 [DEBUG] Next wakeup is due at 2022-03-26 17:13:02.864827+00:00 (in 2999.977032 seconds)
+2022-03-26 19:23:02,893 [INFO ] Running job "run_main (trigger: interval[0:50:00], next run at: 2022-03-26 17:13:02 UTC)" (scheduled at 2022-03-26 16:23:02.864827+00:00)
+2022-03-26 19:23:02,940 [DEBUG] Получаем все неисполненные ордера по БД
+2022-03-26 19:23:02,940 [DEBUG] Получены неисполненные ордера из БД: [('12125666', 'BTCUSDT')]
+2022-03-26 19:23:02,972 [DEBUG] Starting new HTTPS connection (1): testnet.binance.vision:443
+2022-03-26 19:23:03,829 [DEBUG] https://testnet.binance.vision:443 "GET /api/v3/order?symbol=BTCUSDT&orderId=12125666&timestamp=1648311780000&signature=73125fd2d79b17a3c9e8e80d4b80461f4ecb401db2c7aab616ac15065f821c9d HTTP/1.1" 200 272
+2022-03-26 19:23:03,829 [DEBUG] 18, -- длина словаря stock_order_data --
+2022-03-26 19:23:03,829 [DEBUG] Состояние ордера 12125666 - FILLED
+2022-03-26 19:23:03,845 [INFO ] 
+                            Ордер 12125666 выполнен, получено 0.02611700.
+                            Создаем ордер на продажу
+                        
+2022-03-26 19:23:03,845 [DEBUG] Starting new HTTPS connection (1): testnet.binance.vision:443
+2022-03-26 19:23:04,193 [DEBUG] https://testnet.binance.vision:443 "GET /api/v3/account?timestamp=1648311781000&signature=6719f6a44417b35ebf3d3168fce4eca0f1deaf416aa6f086c07475cc5b981cb1 HTTP/1.1" 200 266
+2022-03-26 19:23:04,193 [DEBUG] Баланс ['BNB:1000.00000000', 'BTC:1.02611700', 'BUSD:10000.00000000', 'ETH:100.00000000', 'LTC:500.00000000', 'TRX:500000.00000000', 'USDT:8876.28340019', 'XRP:50000.00000000']
+2022-03-26 19:23:04,199 [DEBUG] Starting new HTTPS connection (1): testnet.binance.vision:443
+2022-03-26 19:23:05,047 [DEBUG] https://testnet.binance.vision:443 "GET /api/v3/ticker/price?symbol=BTCUSDT HTTP/1.1" 200 45
+2022-03-26 19:23:05,047 [INFO ] 
+                            Изначально было куплено 0.02611700, за вычетом комиссии 0.02611700,
+                            Получится продать только 0.02611700
+                            Нужно получить как минимум 1018.95368943 USDT
+                            Мин. цена (с комиссией) составит 39014.9592, после приведения 39014.96000000
+                            Текущая цена рынка 44240.75000000
+                            Итоговая цена продажи: 44240.75000000
+                        
+2022-03-26 19:23:05,063 [DEBUG] Starting new HTTPS connection (1): testnet.binance.vision:443
+2022-03-26 19:23:05,665 [DEBUG] https://testnet.binance.vision:443 "GET /api/v1/klines?symbol=BTCUSDT&interval=1h&limit=1000&startTime=1640998800000 HTTP/1.1" 200 35316
+2022-03-26 19:23:06,050 [INFO ] sell, - ЗНАЧЕНИЕ СИГНАЛА--------------------------
+2022-03-26 19:23:06,050 [DEBUG] Starting new HTTPS connection (1): testnet.binance.vision:443
+2022-03-26 19:23:06,367 [DEBUG] https://testnet.binance.vision:443 "POST /api/v3/order HTTP/1.1" 200 288
+2022-03-26 19:23:06,367 [INFO ] sell, - ЗНАЧЕНИЕ СИГНАЛА--------------------------
+2022-03-26 19:23:06,367 [INFO ] Создан ордер на продажу {'symbol': 'BTCUSDT', 'orderId': 12146023, 'orderListId': -1, 'clientOrderId': 'qxvCMJHSSICyrLPQ8LgqCG', 'transactTime': 1648311786244, 'price': '0.00000000', 'origQty': '0.02611700', 'executedQty': '0.02611700', 'cummulativeQuoteQty': '1155.43540658', 'status': 'FILLED', 'timeInForce': 'GTC', 'type': 'MARKET', 'side': 'SELL', 'fills': [{'price': '44240.74000000', 'qty': '0.02611700', 'commission': '0.00000000', 'commissionAsset': 'USDT', 'tradeId': 3847147}]}, сигнал sell
+2022-03-26 19:23:06,405 [DEBUG] Получаем из настроек все пары, по которым нет неисполненных ордеров
+2022-03-26 19:23:06,405 [DEBUG] По всем парам есть неисполненные ордера
+2022-03-26 19:23:06,405 [INFO ] Job "run_main (trigger: interval[0:50:00], next run at: 2022-03-26 17:13:02 UTC)" executed successfully
+2022-03-26 20:13:02,880 [DEBUG] Looking for jobs to run
+2022-03-26 20:13:02,896 [DEBUG] Next wakeup is due at 2022-03-26 18:03:02.864827+00:00 (in 2999.973891 seconds)
+2022-03-26 20:13:02,897 [INFO ] Running job "run_main (trigger: interval[0:50:00], next run at: 2022-03-26 18:03:02 UTC)" (scheduled at 2022-03-26 17:13:02.864827+00:00)
+2022-03-26 20:13:02,920 [DEBUG] Получаем все неисполненные ордера по БД
+2022-03-26 20:13:02,923 [DEBUG] Получены неисполненные ордера из БД: [('12146023', 'BTCUSDT')]
+2022-03-26 20:13:02,947 [DEBUG] Starting new HTTPS connection (1): testnet.binance.vision:443
+2022-03-26 20:13:03,844 [DEBUG] https://testnet.binance.vision:443 "GET /api/v3/order?symbol=BTCUSDT&orderId=12146023&timestamp=1648314780000&signature=5a56d8cc09102987766e7285ddcbc40e50470ed2d69e0034c1f44cd7ffe0c40d HTTP/1.1" 200 271
+2022-03-26 20:13:03,850 [DEBUG] 18, -- длина словаря stock_order_data --
+2022-03-26 20:13:03,850 [DEBUG] Состояние ордера 12146023 - FILLED
+2022-03-26 20:13:03,851 [DEBUG] Ордер 12146023 на продажу исполнен
+2022-03-26 20:13:03,857 [DEBUG] Starting new HTTPS connection (1): testnet.binance.vision:443
+2022-03-26 20:13:04,682 [DEBUG] https://testnet.binance.vision:443 "GET /api/v3/account?timestamp=1648314781000&signature=3c06eb1d37a6082b1d3a7f54565589bf5cc7b89259db32fe5f3f308d1befc1b2 HTTP/1.1" 200 259
+2022-03-26 20:13:04,687 [DEBUG] ____Баланс ['BNB:1000.00000000', 'BTC:1.00000000', 'BUSD:10000.00000000', 'ETH:100.00000000', 'LTC:500.00000000', 'TRX:500000.00000000', 'USDT:10031.71880677', 'XRP:50000.00000000']
+2022-03-26 20:13:04,714 [DEBUG] Получаем из настроек все пары, по которым нет неисполненных ордеров
+2022-03-26 20:13:04,715 [DEBUG] Найдены пары, по которым нет неисполненных ордеров: ['BTCUSDT']
+2022-03-26 20:13:04,716 [DEBUG] Работаем с парой BTCUSDT
+2022-03-26 20:13:04,726 [DEBUG] Starting new HTTPS connection (1): testnet.binance.vision:443
+2022-03-26 20:13:05,056 [DEBUG] https://testnet.binance.vision:443 "GET /api/v3/account?timestamp=1648314782000&signature=a6ee96afa93cd391a16e319e3d1b54bdbedf8f6956177d4bbba84105af22140d HTTP/1.1" 200 259
+2022-03-26 20:13:05,060 [DEBUG] Баланс ['BTC:1.00000000', 'USDT:10031.71880677']
+2022-03-26 20:13:05,070 [DEBUG] Starting new HTTPS connection (1): testnet.binance.vision:443
+2022-03-26 20:13:05,408 [DEBUG] https://testnet.binance.vision:443 "GET /api/v1/depth?symbol=BTCUSDT&limit=1000 HTTP/1.1" 200 2010
+2022-03-26 20:13:05,418 [DEBUG] 
+                                Средняя цена 38163.65151042, 
+                                после приведения 38163.65000000, 
+                                объем после приведения 0.02617600,
+                                итоговый размер сделки 998.97170240
+                                
+2022-03-26 20:13:05,419 [DEBUG] Рассчитан ордер на покупку(ждем сигнала): кол-во 0.02617600, курс: 38163.65000000
+2022-03-26 20:13:05,425 [DEBUG] Starting new HTTPS connection (1): testnet.binance.vision:443
+2022-03-26 20:13:05,775 [DEBUG] https://testnet.binance.vision:443 "GET /api/v1/klines?symbol=BTCUSDT&interval=1h&limit=1000&startTime=1640998800000 HTTP/1.1" 200 35368
+2022-03-26 20:13:06,626 [INFO ] кол-во ПОКПУАЕМОЙ ХРЕНИ 1 0.026176
+2022-03-26 20:13:06,630 [DEBUG] Starting new HTTPS connection (1): testnet.binance.vision:443
+2022-03-26 20:13:07,462 [DEBUG] https://testnet.binance.vision:443 "POST /api/v3/order HTTP/1.1" 200 309
+2022-03-26 20:13:07,471 [INFO ] кол-во ПОКПУАЕМОЙ ХРЕНИ 2 0.026176
+2022-03-26 20:13:07,477 [DEBUG] Starting new HTTPS connection (1): testnet.binance.vision:443
+2022-03-26 20:13:08,293 [DEBUG] https://testnet.binance.vision:443 "GET /api/v3/account?timestamp=1648314785000&signature=6ff668c8c87b43687cef0fcc45718240f0947eeb1da62dbfa77feeacf24f9289 HTTP/1.1" 200 266
+2022-03-26 20:13:08,296 [DEBUG] ____Баланс ['BTC:1.02617600', 'USDT:8870.12364181']
+2022-03-26 20:13:08,297 [INFO ] Создан ордер на покупку {'symbol': 'BTCUSDT', 'orderId': 12166384, 'orderListId': -1, 'clientOrderId': 'bPCAXBPHVUAzAkmb8ICEtq', 'transactTime': 1648314787387, 'price': '0.00000000', 'origQty': '0.02617600', 'executedQty': '0.02617600', 'cummulativeQuoteQty': '1161.59516496', 'status': 'FILLED', 'timeInForce': 'GTC', 'type': 'MARKET', 'side': 'BUY', 'fills': [{'price': '44376.28000000', 'qty': '0.02212800', 'commission': '0.00000000', 'commissionAsset': 'BTC', 'tradeId': 3851413}, {'price': '44376.69000000', 'qty': '0.00404800', 'commission': '0.00000000', 'commissionAsset': 'BTC', 'tradeId': 3851414}]}, сигнал buy
+2022-03-26 20:13:08,328 [INFO ] Job "run_main (trigger: interval[0:50:00], next run at: 2022-03-26 18:03:02 UTC)" executed successfully
+2022-03-26 21:03:02,884 [DEBUG] Looking for jobs to run
+2022-03-26 21:03:02,884 [DEBUG] Next wakeup is due at 2022-03-26 18:53:02.864827+00:00 (in 2999.980220 seconds)
+2022-03-26 21:03:02,884 [INFO ] Running job "run_main (trigger: interval[0:50:00], next run at: 2022-03-26 18:53:02 UTC)" (scheduled at 2022-03-26 18:03:02.864827+00:00)
+2022-03-26 21:03:02,900 [DEBUG] Получаем все неисполненные ордера по БД
+2022-03-26 21:03:02,915 [DEBUG] Получены неисполненные ордера из БД: [('12166384', 'BTCUSDT')]
+2022-03-26 21:03:02,922 [DEBUG] Starting new HTTPS connection (1): testnet.binance.vision:443
+2022-03-26 21:03:24,341 [DEBUG] https://testnet.binance.vision:443 "GET /api/v3/order?symbol=BTCUSDT&orderId=12166384&timestamp=1648317780000&signature=8d19891cbf9f0020d2b6aa4dc3b361446deb5a2cf87b19b822559d13a3b13f37 HTTP/1.1" 400 79
+2022-03-26 21:03:24,341 [DEBUG] 2, -- длина словаря stock_order_data --
+2022-03-26 21:03:24,341 [ERROR] 'status'
+Traceback (most recent call last):
+  File "./binance_bot_alg.py", line 178, in run_main
+    order_status = stock_order_data['status']
+KeyError: 'status'
+2022-03-26 21:03:24,372 [INFO ] Job "run_main (trigger: interval[0:50:00], next run at: 2022-03-26 18:53:02 UTC)" executed successfully
+2022-03-26 21:53:02,872 [DEBUG] Looking for jobs to run
+2022-03-26 21:53:02,876 [DEBUG] Next wakeup is due at 2022-03-26 19:43:02.864827+00:00 (in 2999.990031 seconds)
+2022-03-26 21:53:02,877 [INFO ] Running job "run_main (trigger: interval[0:50:00], next run at: 2022-03-26 19:43:02 UTC)" (scheduled at 2022-03-26 18:53:02.864827+00:00)
+2022-03-26 21:53:02,905 [DEBUG] Получаем все неисполненные ордера по БД
+2022-03-26 21:53:02,907 [DEBUG] Получены неисполненные ордера из БД: [('12166384', 'BTCUSDT')]
+2022-03-26 21:53:02,916 [DEBUG] Starting new HTTPS connection (1): testnet.binance.vision:443
+2022-03-26 21:53:24,866 [DEBUG] https://testnet.binance.vision:443 "GET /api/v3/order?symbol=BTCUSDT&orderId=12166384&timestamp=1648320780000&signature=d52c91b606488ba11349107d9f940268a3752bda78fa78caf0dc166d25b462cd HTTP/1.1" 400 79
+2022-03-26 21:53:24,877 [DEBUG] 2, -- длина словаря stock_order_data --
+2022-03-26 21:53:24,879 [ERROR] 'status'
+Traceback (most recent call last):
+  File "./binance_bot_alg.py", line 178, in run_main
+    order_status = stock_order_data['status']
+KeyError: 'status'
+2022-03-26 21:53:24,881 [INFO ] Job "run_main (trigger: interval[0:50:00], next run at: 2022-03-26 19:43:02 UTC)" executed successfully
+2022-03-27 10:18:21,031 [DEBUG] 
+    Текущее время: 2022-03-27 10:18:20 1648365500
+    Время сервера: 2022-03-27 10:18:20 1648365500
+    Разница: 0.00000000 
+    Бот будет работать, как будто сейчас: 2022-03-27 10:18:20 1648365500
+
+2022-03-27 10:18:22,441 [INFO ] Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2022-03-27 10:18:22,444 [INFO ] Added job "run_main" to job store "default"
+2022-03-27 10:18:22,444 [INFO ] Scheduler started
+2022-03-27 10:18:22,445 [DEBUG] Looking for jobs to run
+2022-03-27 10:18:22,445 [DEBUG] Next wakeup is due at 2022-03-27 08:08:22.441596+00:00 (in 2999.996049 seconds)
+2022-03-27 11:08:22,483 [DEBUG] Looking for jobs to run
+2022-03-27 11:08:22,526 [DEBUG] Next wakeup is due at 2022-03-27 08:58:22.441596+00:00 (in 2999.947385 seconds)
+2022-03-27 11:08:22,527 [INFO ] Running job "run_main (trigger: interval[0:50:00], next run at: 2022-03-27 08:58:22 UTC)" (scheduled at 2022-03-27 08:08:22.441596+00:00)
+2022-03-27 11:08:22,580 [DEBUG] Получаем все неисполненные ордера по БД
+2022-03-27 11:08:22,583 [DEBUG] Получены неисполненные ордера из БД: [('12166384', 'BTCUSDT')]
+2022-03-27 11:08:22,628 [DEBUG] Starting new HTTPS connection (1): testnet.binance.vision:443
+2022-03-27 11:08:23,519 [DEBUG] https://testnet.binance.vision:443 "GET /api/v3/order?symbol=BTCUSDT&orderId=12166384&timestamp=1648368501000&signature=78be48d661059153348c74bbfda7e1c139962a0248afbab87747218c97d3c326 HTTP/1.1" 200 273
+2022-03-27 11:08:23,525 [DEBUG] 18, -- длина словаря stock_order_data --
+2022-03-27 11:08:23,525 [DEBUG] Состояние ордера 12166384 - FILLED
+2022-03-27 11:08:23,533 [INFO ] 
+                            Ордер 12166384 выполнен, получено 0.02617600.
+                            Создаем ордер на продажу
+                        
+2022-03-27 11:08:23,543 [DEBUG] Starting new HTTPS connection (1): testnet.binance.vision:443
+2022-03-27 11:08:23,885 [DEBUG] https://testnet.binance.vision:443 "GET /api/v3/account?timestamp=1648368502000&signature=323d99ce9246f5275379f2632296e30ec96aaf3eb7f51af7c6beb306d2a533b4 HTTP/1.1" 200 266
+2022-03-27 11:08:23,892 [DEBUG] Баланс ['BNB:1000.00000000', 'BTC:1.02617600', 'BUSD:10000.00000000', 'ETH:100.00000000', 'LTC:500.00000000', 'TRX:500000.00000000', 'USDT:8870.12364181', 'XRP:50000.00000000']
+2022-03-27 11:08:23,895 [DEBUG] Starting new HTTPS connection (1): testnet.binance.vision:443
+2022-03-27 11:08:24,236 [DEBUG] https://testnet.binance.vision:443 "GET /api/v3/ticker/price?symbol=BTCUSDT HTTP/1.1" 200 45
+2022-03-27 11:08:24,245 [INFO ] 
+                            Изначально было куплено 0.02617600, за вычетом комиссии 0.02617600,
+                            Получится продать только 0.02617600
+                            Нужно получить как минимум 1018.95113645 USDT
+                            Мин. цена (с комиссией) составит 38926.923, после приведения 38926.93000000
+                            Текущая цена рынка 44717.63000000
+                            Итоговая цена продажи: 44717.63000000
+                        
+2022-03-27 11:08:24,253 [DEBUG] Starting new HTTPS connection (1): testnet.binance.vision:443
+2022-03-27 11:08:24,585 [DEBUG] https://testnet.binance.vision:443 "GET /api/v1/klines?symbol=BTCUSDT&interval=1h&limit=1000&startTime=1640998800000 HTTP/1.1" 200 36236
+2022-03-27 11:08:26,035 [INFO ] sell, - ЗНАЧЕНИЕ СИГНАЛА--------------------------
+2022-03-27 11:08:26,045 [DEBUG] Starting new HTTPS connection (1): testnet.binance.vision:443
+2022-03-27 11:08:26,875 [DEBUG] https://testnet.binance.vision:443 "POST /api/v3/order HTTP/1.1" 200 288
+2022-03-27 11:08:26,876 [INFO ] sell, - ЗНАЧЕНИЕ СИГНАЛА--------------------------
+2022-03-27 11:08:26,876 [INFO ] Создан ордер на продажу {'symbol': 'BTCUSDT', 'orderId': 12455164, 'orderListId': -1, 'clientOrderId': 'k8OfD2UrZTqqR9u35pZIjm', 'transactTime': 1648368506081, 'price': '0.00000000', 'origQty': '0.02617600', 'executedQty': '0.02617600', 'cummulativeQuoteQty': '1170.52842112', 'status': 'FILLED', 'timeInForce': 'GTC', 'type': 'MARKET', 'side': 'SELL', 'fills': [{'price': '44717.62000000', 'qty': '0.02617600', 'commission': '0.00000000', 'commissionAsset': 'USDT', 'tradeId': 3911037}]}, сигнал sell
+2022-03-27 11:08:26,898 [DEBUG] Получаем из настроек все пары, по которым нет неисполненных ордеров
+2022-03-27 11:08:26,898 [DEBUG] По всем парам есть неисполненные ордера
+2022-03-27 11:08:26,902 [INFO ] Job "run_main (trigger: interval[0:50:00], next run at: 2022-03-27 08:58:22 UTC)" executed successfully
+2022-03-27 11:58:22,504 [DEBUG] Looking for jobs to run
+2022-03-27 11:58:22,523 [DEBUG] Next wakeup is due at 2022-03-27 09:48:22.441596+00:00 (in 2999.927729 seconds)
+2022-03-27 11:58:22,525 [INFO ] Running job "run_main (trigger: interval[0:50:00], next run at: 2022-03-27 09:48:22 UTC)" (scheduled at 2022-03-27 08:58:22.441596+00:00)
+2022-03-27 11:58:22,547 [DEBUG] Получаем все неисполненные ордера по БД
+2022-03-27 11:58:22,547 [DEBUG] Получены неисполненные ордера из БД: [('12455164', 'BTCUSDT')]
+2022-03-27 11:58:22,578 [DEBUG] Starting new HTTPS connection (1): testnet.binance.vision:443
+2022-03-27 11:58:22,942 [DEBUG] https://testnet.binance.vision:443 "GET /api/v3/order?symbol=BTCUSDT&orderId=12455164&timestamp=1648371501000&signature=d108860aefbca006ba5f512fa1ad145792ae11d1da5c1e203fe4bf80ac8cb471 HTTP/1.1" 200 273
+2022-03-27 11:58:22,944 [DEBUG] 18, -- длина словаря stock_order_data --
+2022-03-27 11:58:22,944 [DEBUG] Состояние ордера 12455164 - FILLED
+2022-03-27 11:58:22,953 [DEBUG] Ордер 12455164 на продажу исполнен
+2022-03-27 11:58:22,954 [DEBUG] Starting new HTTPS connection (1): testnet.binance.vision:443
+2022-03-27 11:58:23,805 [DEBUG] https://testnet.binance.vision:443 "GET /api/v3/account?timestamp=1648371501000&signature=cade65cbb3032864445bfdca2ef9029f03cb42a6b8a1f59ebae2147f6551efd2 HTTP/1.1" 200 259
+2022-03-27 11:58:23,814 [DEBUG] ____Баланс ['BNB:1000.00000000', 'BTC:1.00000000', 'BUSD:10000.00000000', 'ETH:100.00000000', 'LTC:500.00000000', 'TRX:500000.00000000', 'USDT:10040.65206293', 'XRP:50000.00000000']
+2022-03-27 11:58:23,853 [DEBUG] Получаем из настроек все пары, по которым нет неисполненных ордеров
+2022-03-27 11:58:23,854 [DEBUG] Найдены пары, по которым нет неисполненных ордеров: ['BTCUSDT']
+2022-03-27 11:58:23,854 [DEBUG] Работаем с парой BTCUSDT
+2022-03-27 11:58:23,854 [DEBUG] Starting new HTTPS connection (1): testnet.binance.vision:443
+2022-03-27 11:58:24,696 [DEBUG] https://testnet.binance.vision:443 "GET /api/v3/account?timestamp=1648371502000&signature=e172e4929636e1f626c1248b7ec3fb9dfe5d946e7b8838f41233ef55e3ca93bb HTTP/1.1" 200 259
+2022-03-27 11:58:24,705 [DEBUG] Баланс ['BTC:1.00000000', 'USDT:10040.65206293']
+2022-03-27 11:58:24,713 [DEBUG] Starting new HTTPS connection (1): testnet.binance.vision:443
+2022-03-27 11:58:25,035 [DEBUG] https://testnet.binance.vision:443 "GET /api/v1/depth?symbol=BTCUSDT&limit=1000 HTTP/1.1" 200 2166
+2022-03-27 11:58:25,044 [DEBUG] 
+                                Средняя цена 37950.25111111, 
+                                после приведения 37950.25000000, 
+                                объем после приведения 0.02632300,
+                                итоговый размер сделки 998.96443075
+                                
+2022-03-27 11:58:25,044 [DEBUG] Рассчитан ордер на покупку(ждем сигнала): кол-во 0.02632300, курс: 37950.25000000
+2022-03-27 11:58:25,065 [DEBUG] Starting new HTTPS connection (1): testnet.binance.vision:443
+2022-03-27 11:58:25,672 [DEBUG] https://testnet.binance.vision:443 "GET /api/v1/klines?symbol=BTCUSDT&interval=1h&limit=1000&startTime=1640998800000 HTTP/1.1" 200 36237
+2022-03-27 11:58:26,545 [INFO ] sell - ЗНАЧЕНИЕ СИГНАЛА. НЕТ СИГНАЛА НА ПОКУПКУ.
+2022-03-27 11:58:26,545 [INFO ] Job "run_main (trigger: interval[0:50:00], next run at: 2022-03-27 09:48:22 UTC)" executed successfully
+2022-03-27 12:48:22,473 [DEBUG] Looking for jobs to run
+2022-03-27 12:48:22,486 [DEBUG] Next wakeup is due at 2022-03-27 10:38:22.441596+00:00 (in 2999.963875 seconds)
+2022-03-27 12:48:22,486 [INFO ] Running job "run_main (trigger: interval[0:50:00], next run at: 2022-03-27 10:38:22 UTC)" (scheduled at 2022-03-27 09:48:22.441596+00:00)
+2022-03-27 12:48:22,508 [DEBUG] Получаем все неисполненные ордера по БД
+2022-03-27 12:48:22,513 [DEBUG] Неисполненных ордеров в БД нет
+2022-03-27 12:48:22,515 [DEBUG] Получаем из настроек все пары, по которым нет неисполненных ордеров
+2022-03-27 12:48:22,516 [DEBUG] Найдены пары, по которым нет неисполненных ордеров: ['BTCUSDT']
+2022-03-27 12:48:22,516 [DEBUG] Работаем с парой BTCUSDT
+2022-03-27 12:48:22,536 [DEBUG] Starting new HTTPS connection (1): testnet.binance.vision:443
+2022-03-27 12:48:23,673 [DEBUG] https://testnet.binance.vision:443 "GET /api/v3/account?timestamp=1648374501000&signature=abc8814daca00eb494a66d1755bbceceee8a5cf491f2f424debeab6dbfeccff0 HTTP/1.1" 200 259
+2022-03-27 12:48:23,681 [DEBUG] Баланс ['BTC:1.00000000', 'USDT:10040.65206293']
+2022-03-27 12:48:23,685 [DEBUG] Starting new HTTPS connection (1): testnet.binance.vision:443
+2022-03-27 12:48:24,017 [DEBUG] https://testnet.binance.vision:443 "GET /api/v1/depth?symbol=BTCUSDT&limit=1000 HTTP/1.1" 200 2257
+2022-03-27 12:48:24,026 [DEBUG] 
+                                Средняя цена 38239.59457711, 
+                                после приведения 38239.59000000, 
+                                объем после приведения 0.02612400,
+                                итоговый размер сделки 998.97104916
+                                
+2022-03-27 12:48:24,026 [DEBUG] Рассчитан ордер на покупку(ждем сигнала): кол-во 0.02612400, курс: 38239.59000000
+2022-03-27 12:48:24,034 [DEBUG] Starting new HTTPS connection (1): testnet.binance.vision:443
+2022-03-27 12:48:24,897 [DEBUG] https://testnet.binance.vision:443 "GET /api/v1/klines?symbol=BTCUSDT&interval=1h&limit=1000&startTime=1640998800000 HTTP/1.1" 200 36295
+2022-03-27 12:48:25,853 [INFO ] кол-во ПОКПУАЕМОЙ ХРЕНИ 1 0.026124
+2022-03-27 12:48:25,854 [DEBUG] Starting new HTTPS connection (1): testnet.binance.vision:443
+2022-03-27 12:48:26,695 [DEBUG] https://testnet.binance.vision:443 "POST /api/v3/order HTTP/1.1" 200 290
+2022-03-27 12:48:26,705 [INFO ] кол-во ПОКПУАЕМОЙ ХРЕНИ 2 0.026124
+2022-03-27 12:48:26,717 [DEBUG] Starting new HTTPS connection (1): testnet.binance.vision:443
+2022-03-27 12:48:27,073 [DEBUG] https://testnet.binance.vision:443 "GET /api/v3/account?timestamp=1648374505000&signature=eaa2931796eaef6f268b0052543cb642fdbb6b92a0bed515f53315546907f10d HTTP/1.1" 200 266
+2022-03-27 12:48:27,085 [DEBUG] ____Баланс ['BTC:1.02612400', 'USDT:8875.85160905']
+2022-03-27 12:48:27,086 [INFO ] Создан ордер на покупку {'symbol': 'BTCUSDT', 'orderId': 12494685, 'orderListId': -1, 'clientOrderId': 'AVcrzRgXcbQr0h1ljdQtax', 'transactTime': 1648374505982, 'price': '0.00000000', 'origQty': '0.02612400', 'executedQty': '0.02612400', 'cummulativeQuoteQty': '1164.80045388', 'status': 'FILLED', 'timeInForce': 'GTC', 'type': 'MARKET', 'side': 'BUY', 'fills': [{'price': '44587.37000000', 'qty': '0.02612400', 'commission': '0.00000000', 'commissionAsset': 'BTC', 'tradeId': 3917139}]}, сигнал buy
+2022-03-27 12:48:27,108 [INFO ] Job "run_main (trigger: interval[0:50:00], next run at: 2022-03-27 10:38:22 UTC)" executed successfully
+2022-03-27 13:38:22,458 [DEBUG] Looking for jobs to run
+2022-03-27 13:38:22,463 [DEBUG] Next wakeup is due at 2022-03-27 11:28:22.441596+00:00 (in 2999.978009 seconds)
+2022-03-27 13:38:22,463 [INFO ] Running job "run_main (trigger: interval[0:50:00], next run at: 2022-03-27 11:28:22 UTC)" (scheduled at 2022-03-27 10:38:22.441596+00:00)
+2022-03-27 13:38:22,474 [DEBUG] Получаем все неисполненные ордера по БД
+2022-03-27 13:38:22,474 [DEBUG] Получены неисполненные ордера из БД: [('12494685', 'BTCUSDT')]
+2022-03-27 13:38:22,484 [DEBUG] Starting new HTTPS connection (1): testnet.binance.vision:443
+2022-03-27 13:38:23,352 [DEBUG] https://testnet.binance.vision:443 "GET /api/v3/order?symbol=BTCUSDT&orderId=12494685&timestamp=1648377501000&signature=0f1364faa1ed188b9d1c220275013cf97836892c98dcb8832068c5a1a4a764a2 HTTP/1.1" 200 272
+2022-03-27 13:38:23,354 [DEBUG] 18, -- длина словаря stock_order_data --
+2022-03-27 13:38:23,354 [DEBUG] Состояние ордера 12494685 - FILLED
+2022-03-27 13:38:23,354 [INFO ] 
+                            Ордер 12494685 выполнен, получено 0.02612400.
+                            Создаем ордер на продажу
+                        
+2022-03-27 13:38:23,363 [DEBUG] Starting new HTTPS connection (1): testnet.binance.vision:443
+2022-03-27 13:38:24,245 [DEBUG] https://testnet.binance.vision:443 "GET /api/v3/account?timestamp=1648377502000&signature=1a0c6dee5392eb1bdf8f2a60b2620e4bea19ff906a8ff93e28f10220a3bf6750 HTTP/1.1" 200 266
+2022-03-27 13:38:24,255 [DEBUG] Баланс ['BNB:1000.00000000', 'BTC:1.02612400', 'BUSD:10000.00000000', 'ETH:100.00000000', 'LTC:500.00000000', 'TRX:500000.00000000', 'USDT:8875.85160905', 'XRP:50000.00000000']
+2022-03-27 13:38:24,255 [DEBUG] Starting new HTTPS connection (1): testnet.binance.vision:443
+2022-03-27 13:38:25,133 [DEBUG] https://testnet.binance.vision:443 "GET /api/v3/ticker/price?symbol=BTCUSDT HTTP/1.1" 200 45
+2022-03-27 13:38:25,133 [INFO ] 
+                            Изначально было куплено 0.02612400, за вычетом комиссии 0.02612400,
+                            Получится продать только 0.02612400
+                            Нужно получить как минимум 1018.95047014 USDT
+                            Мин. цена (с комиссией) составит 39004.3818, после приведения 39004.39000000
+                            Текущая цена рынка 44555.03000000
+                            Итоговая цена продажи: 44555.03000000
+                        
+2022-03-27 13:38:25,133 [DEBUG] Starting new HTTPS connection (1): testnet.binance.vision:443
+2022-03-27 13:38:25,725 [DEBUG] https://testnet.binance.vision:443 "GET /api/v1/klines?symbol=BTCUSDT&interval=1h&limit=1000&startTime=1640998800000 HTTP/1.1" 200 36352
+2022-03-27 13:38:26,003 [INFO ] sell, - ЗНАЧЕНИЕ СИГНАЛА--------------------------
+2022-03-27 13:38:26,004 [DEBUG] Starting new HTTPS connection (1): testnet.binance.vision:443
+2022-03-27 13:38:26,323 [DEBUG] https://testnet.binance.vision:443 "POST /api/v3/order HTTP/1.1" 200 291
+2022-03-27 13:38:26,323 [INFO ] sell, - ЗНАЧЕНИЕ СИГНАЛА--------------------------
+2022-03-27 13:38:26,323 [INFO ] Создан ордер на продажу {'symbol': 'BTCUSDT', 'orderId': 12514493, 'orderListId': -1, 'clientOrderId': 'E1IgFTMMBEXaBSV8wJqawW', 'transactTime': 1648377505643, 'price': '0.00000000', 'origQty': '0.02612400', 'executedQty': '0.02612400', 'cummulativeQuoteQty': '1163.94933396', 'status': 'FILLED', 'timeInForce': 'GTC', 'type': 'MARKET', 'side': 'SELL', 'fills': [{'price': '44554.79000000', 'qty': '0.02612400', 'commission': '0.00000000', 'commissionAsset': 'USDT', 'tradeId': 3921011}]}, сигнал sell
+2022-03-27 13:38:26,351 [DEBUG] Получаем из настроек все пары, по которым нет неисполненных ордеров
+2022-03-27 13:38:26,353 [DEBUG] По всем парам есть неисполненные ордера
+2022-03-27 13:38:26,353 [INFO ] Job "run_main (trigger: interval[0:50:00], next run at: 2022-03-27 11:28:22 UTC)" executed successfully
+2022-03-27 14:28:22,452 [DEBUG] Looking for jobs to run
+2022-03-27 14:28:22,453 [DEBUG] Next wakeup is due at 2022-03-27 12:18:22.441596+00:00 (in 2999.987681 seconds)
+2022-03-27 14:28:22,453 [INFO ] Running job "run_main (trigger: interval[0:50:00], next run at: 2022-03-27 12:18:22 UTC)" (scheduled at 2022-03-27 11:28:22.441596+00:00)
+2022-03-27 14:28:22,477 [DEBUG] Получаем все неисполненные ордера по БД
+2022-03-27 14:28:22,481 [DEBUG] Получены неисполненные ордера из БД: [('12514493', 'BTCUSDT')]
+2022-03-27 14:28:22,492 [DEBUG] Starting new HTTPS connection (1): testnet.binance.vision:443
+2022-03-27 14:28:23,325 [DEBUG] https://testnet.binance.vision:443 "GET /api/v3/order?symbol=BTCUSDT&orderId=12514493&timestamp=1648380501000&signature=dd50bf0bd37ed195e2145e4d412d376bcebb5eb12f6e5fac667d3ec9d39f234f HTTP/1.1" 200 272
+2022-03-27 14:28:23,331 [DEBUG] 18, -- длина словаря stock_order_data --
+2022-03-27 14:28:23,332 [DEBUG] Состояние ордера 12514493 - FILLED
+2022-03-27 14:28:23,332 [DEBUG] Ордер 12514493 на продажу исполнен
+2022-03-27 14:28:23,332 [DEBUG] Starting new HTTPS connection (1): testnet.binance.vision:443
+2022-03-27 14:28:23,786 [DEBUG] https://testnet.binance.vision:443 "GET /api/v3/account?timestamp=1648380502000&signature=f63c4bad52f0bac3c49c689bdf4a0c7f75fcae798ab8be3fd294448d3f9a6c06 HTTP/1.1" 200 259
+2022-03-27 14:28:23,791 [DEBUG] ____Баланс ['BNB:1000.00000000', 'BTC:1.00000000', 'BUSD:10000.00000000', 'ETH:100.00000000', 'LTC:500.00000000', 'TRX:500000.00000000', 'USDT:10039.80094301', 'XRP:50000.00000000']
+2022-03-27 14:28:23,822 [DEBUG] Получаем из настроек все пары, по которым нет неисполненных ордеров
+2022-03-27 14:28:23,824 [DEBUG] Найдены пары, по которым нет неисполненных ордеров: ['BTCUSDT']
+2022-03-27 14:28:23,826 [DEBUG] Работаем с парой BTCUSDT
+2022-03-27 14:28:23,835 [DEBUG] Starting new HTTPS connection (1): testnet.binance.vision:443
+2022-03-27 14:28:24,153 [DEBUG] https://testnet.binance.vision:443 "GET /api/v3/account?timestamp=1648380502000&signature=f63c4bad52f0bac3c49c689bdf4a0c7f75fcae798ab8be3fd294448d3f9a6c06 HTTP/1.1" 200 259
+2022-03-27 14:28:24,162 [DEBUG] Баланс ['BTC:1.00000000', 'USDT:10039.80094301']
+2022-03-27 14:28:24,174 [DEBUG] Starting new HTTPS connection (1): testnet.binance.vision:443
+2022-03-27 14:28:25,006 [DEBUG] https://testnet.binance.vision:443 "GET /api/v1/depth?symbol=BTCUSDT&limit=1000 HTTP/1.1" 200 2320
+2022-03-27 14:28:25,008 [DEBUG] 
+                                Средняя цена 38290.58355000, 
+                                после приведения 38290.58000000, 
+                                объем после приведения 0.02608900,
+                                итоговый размер сделки 998.96294162
+                                
+2022-03-27 14:28:25,008 [DEBUG] Рассчитан ордер на покупку(ждем сигнала): кол-во 0.02608900, курс: 38290.58000000
+2022-03-27 14:28:25,013 [DEBUG] Starting new HTTPS connection (1): testnet.binance.vision:443
+2022-03-27 14:28:25,594 [DEBUG] https://testnet.binance.vision:443 "GET /api/v1/klines?symbol=BTCUSDT&interval=1h&limit=1000&startTime=1640998800000 HTTP/1.1" 200 36416
+2022-03-27 14:28:25,893 [INFO ] кол-во ПОКПУАЕМОЙ ХРЕНИ 1 0.026089
+2022-03-27 14:28:25,893 [DEBUG] Starting new HTTPS connection (1): testnet.binance.vision:443
+2022-03-27 14:28:26,204 [DEBUG] https://testnet.binance.vision:443 "POST /api/v3/order HTTP/1.1" 200 289
+2022-03-27 14:28:26,214 [INFO ] кол-во ПОКПУАЕМОЙ ХРЕНИ 2 0.026089
+2022-03-27 14:28:26,222 [DEBUG] Starting new HTTPS connection (1): testnet.binance.vision:443
+2022-03-27 14:28:27,062 [DEBUG] https://testnet.binance.vision:443 "GET /api/v3/account?timestamp=1648380505000&signature=2e4f75766d42c19614adc42815733f16a09bc7267ab17b9058cc4cbfe742c643 HTTP/1.1" 200 265
+2022-03-27 14:28:27,073 [DEBUG] ____Баланс ['BTC:1.02608900', 'USDT:8876.56678666']
+2022-03-27 14:28:27,073 [INFO ] Создан ордер на покупку {'symbol': 'BTCUSDT', 'orderId': 12534313, 'orderListId': -1, 'clientOrderId': 'SPyLnr1UZWkYyUC2r0ijNQ', 'transactTime': 1648380505565, 'price': '0.00000000', 'origQty': '0.02608900', 'executedQty': '0.02608900', 'cummulativeQuoteQty': '1163.23415635', 'status': 'FILLED', 'timeInForce': 'GTC', 'type': 'MARKET', 'side': 'BUY', 'fills': [{'price': '44587.15000000', 'qty': '0.02608900', 'commission': '0.00000000', 'commissionAsset': 'BTC', 'tradeId': 3925367}]}, сигнал buy
+2022-03-27 14:28:27,092 [INFO ] Job "run_main (trigger: interval[0:50:00], next run at: 2022-03-27 12:18:22 UTC)" executed successfully
+2022-03-27 15:18:22,459 [DEBUG] Looking for jobs to run
+2022-03-27 15:18:22,459 [DEBUG] Next wakeup is due at 2022-03-27 13:08:22.441596+00:00 (in 2999.982519 seconds)
+2022-03-27 15:18:22,459 [INFO ] Running job "run_main (trigger: interval[0:50:00], next run at: 2022-03-27 13:08:22 UTC)" (scheduled at 2022-03-27 12:18:22.441596+00:00)
+2022-03-27 15:18:22,474 [DEBUG] Получаем все неисполненные ордера по БД
+2022-03-27 15:18:22,474 [DEBUG] Получены неисполненные ордера из БД: [('12534313', 'BTCUSDT')]
+2022-03-27 15:18:22,490 [DEBUG] Starting new HTTPS connection (1): testnet.binance.vision:443
+2022-03-27 15:18:23,361 [DEBUG] https://testnet.binance.vision:443 "GET /api/v3/order?symbol=BTCUSDT&orderId=12534313&timestamp=1648383501000&signature=d0bf64248ffd6c1f910d27038df4f4ac71b6c8846296b77a4e5ef2331b6770e0 HTTP/1.1" 200 272
+2022-03-27 15:18:23,376 [DEBUG] 18, -- длина словаря stock_order_data --
+2022-03-27 15:18:23,376 [DEBUG] Состояние ордера 12534313 - FILLED
+2022-03-27 15:18:23,376 [INFO ] 
+                            Ордер 12534313 выполнен, получено 0.02608900.
+                            Создаем ордер на продажу
+                        
+2022-03-27 15:18:23,376 [DEBUG] Starting new HTTPS connection (1): testnet.binance.vision:443
+2022-03-27 15:18:23,746 [DEBUG] https://testnet.binance.vision:443 "GET /api/v3/account?timestamp=1648383502000&signature=af7015c73e688f916487b68d85b145149f6053e098b5221cb7dd319525cdce60 HTTP/1.1" 200 265
+2022-03-27 15:18:23,746 [DEBUG] Баланс ['BNB:1000.00000000', 'BTC:1.02608900', 'BUSD:10000.00000000', 'ETH:100.00000000', 'LTC:500.00000000', 'TRX:500000.00000000', 'USDT:8876.56678666', 'XRP:50000.00000000']
+2022-03-27 15:18:23,761 [DEBUG] Starting new HTTPS connection (1): testnet.binance.vision:443
+2022-03-27 15:18:24,618 [DEBUG] https://testnet.binance.vision:443 "GET /api/v3/ticker/price?symbol=BTCUSDT HTTP/1.1" 200 45
+2022-03-27 15:18:24,634 [INFO ] 
+                            Изначально было куплено 0.02608900, за вычетом комиссии 0.02608900,
+                            Получится продать только 0.02608900
+                            Нужно получить как минимум 1018.94220045 USDT
+                            Мин. цена (с комиссией) составит 39056.391599999995, после приведения 39056.40000000
+                            Текущая цена рынка 44503.59000000
+                            Итоговая цена продажи: 44503.59000000
+                        
+2022-03-27 15:18:24,634 [DEBUG] Starting new HTTPS connection (1): testnet.binance.vision:443
+2022-03-27 15:18:24,997 [DEBUG] https://testnet.binance.vision:443 "GET /api/v1/klines?symbol=BTCUSDT&interval=1h&limit=1000&startTime=1640998800000 HTTP/1.1" 200 36472
+2022-03-27 15:18:25,520 [INFO ] sell, - ЗНАЧЕНИЕ СИГНАЛА--------------------------
+2022-03-27 15:18:25,520 [DEBUG] Starting new HTTPS connection (1): testnet.binance.vision:443
+2022-03-27 15:18:25,883 [DEBUG] https://testnet.binance.vision:443 "POST /api/v3/order HTTP/1.1" 200 291
+2022-03-27 15:18:25,883 [INFO ] sell, - ЗНАЧЕНИЕ СИГНАЛА--------------------------
+2022-03-27 15:18:25,883 [INFO ] Создан ордер на продажу {'symbol': 'BTCUSDT', 'orderId': 12554289, 'orderListId': -1, 'clientOrderId': 'MDqoqjsZf276MdgqkJNyrY', 'transactTime': 1648383505262, 'price': '0.00000000', 'origQty': '0.02608900', 'executedQty': '0.02608900', 'cummulativeQuoteQty': '1160.96023911', 'status': 'FILLED', 'timeInForce': 'GTC', 'type': 'MARKET', 'side': 'SELL', 'fills': [{'price': '44499.99000000', 'qty': '0.02608900', 'commission': '0.00000000', 'commissionAsset': 'USDT', 'tradeId': 3928952}]}, сигнал sell
+2022-03-27 15:18:25,899 [DEBUG] Получаем из настроек все пары, по которым нет неисполненных ордеров
+2022-03-27 15:18:25,899 [DEBUG] По всем парам есть неисполненные ордера
+2022-03-27 15:18:25,899 [INFO ] Job "run_main (trigger: interval[0:50:00], next run at: 2022-03-27 13:08:22 UTC)" executed successfully
+2022-03-27 16:08:22,452 [DEBUG] Looking for jobs to run
+2022-03-27 16:08:22,452 [DEBUG] Next wakeup is due at 2022-03-27 13:58:22.441596+00:00 (in 2999.989535 seconds)
+2022-03-27 16:08:22,452 [INFO ] Running job "run_main (trigger: interval[0:50:00], next run at: 2022-03-27 13:58:22 UTC)" (scheduled at 2022-03-27 13:08:22.441596+00:00)
+2022-03-27 16:08:22,467 [DEBUG] Получаем все неисполненные ордера по БД
+2022-03-27 16:08:22,483 [DEBUG] Получены неисполненные ордера из БД: [('12554289', 'BTCUSDT')]
+2022-03-27 16:08:22,483 [DEBUG] Starting new HTTPS connection (1): testnet.binance.vision:443
+2022-03-27 16:08:23,322 [DEBUG] https://testnet.binance.vision:443 "GET /api/v3/order?symbol=BTCUSDT&orderId=12554289&timestamp=1648386501000&signature=37c394b05a35e213f6514d0c8161a2d2320f7ec04866a8111cc76bba09396991 HTTP/1.1" 200 273
+2022-03-27 16:08:23,322 [DEBUG] 18, -- длина словаря stock_order_data --
+2022-03-27 16:08:23,322 [DEBUG] Состояние ордера 12554289 - FILLED
+2022-03-27 16:08:23,322 [DEBUG] Ордер 12554289 на продажу исполнен
+2022-03-27 16:08:23,322 [DEBUG] Starting new HTTPS connection (1): testnet.binance.vision:443
+2022-03-27 16:08:23,669 [DEBUG] https://testnet.binance.vision:443 "GET /api/v3/account?timestamp=1648386502000&signature=dab245a00cc54d25126fc56bc6a95575738f50a0e912f101930bf5b58faae838 HTTP/1.1" 200 259
+2022-03-27 16:08:23,684 [DEBUG] ____Баланс ['BNB:1000.00000000', 'BTC:1.00000000', 'BUSD:10000.00000000', 'ETH:100.00000000', 'LTC:500.00000000', 'TRX:500000.00000000', 'USDT:10037.52702577', 'XRP:50000.00000000']
+2022-03-27 16:08:23,700 [DEBUG] Получаем из настроек все пары, по которым нет неисполненных ордеров
+2022-03-27 16:08:23,700 [DEBUG] Найдены пары, по которым нет неисполненных ордеров: ['BTCUSDT']
+2022-03-27 16:08:23,700 [DEBUG] Работаем с парой BTCUSDT
+2022-03-27 16:08:23,716 [DEBUG] Starting new HTTPS connection (1): testnet.binance.vision:443
+2022-03-27 16:08:24,023 [DEBUG] https://testnet.binance.vision:443 "GET /api/v3/account?timestamp=1648386502000&signature=dab245a00cc54d25126fc56bc6a95575738f50a0e912f101930bf5b58faae838 HTTP/1.1" 200 259
+2022-03-27 16:08:24,023 [DEBUG] Баланс ['BTC:1.00000000', 'USDT:10037.52702577']
+2022-03-27 16:08:24,038 [DEBUG] Starting new HTTPS connection (1): testnet.binance.vision:443
+2022-03-27 16:08:24,856 [DEBUG] https://testnet.binance.vision:443 "GET /api/v1/depth?symbol=BTCUSDT&limit=1000 HTTP/1.1" 200 2226
+2022-03-27 16:08:24,872 [DEBUG] 
+                                Средняя цена 37666.05617486, 
+                                после приведения 37666.05000000, 
+                                объем после приведения 0.02652200,
+                                итоговый размер сделки 998.97897810
+                                
+2022-03-27 16:08:24,872 [DEBUG] Рассчитан ордер на покупку(ждем сигнала): кол-во 0.02652200, курс: 37666.05000000
+2022-03-27 16:08:24,872 [DEBUG] Starting new HTTPS connection (1): testnet.binance.vision:443
+2022-03-27 16:08:25,930 [DEBUG] https://testnet.binance.vision:443 "GET /api/v1/klines?symbol=BTCUSDT&interval=1h&limit=1000&startTime=1640998800000 HTTP/1.1" 200 36530
+2022-03-27 16:08:26,209 [INFO ] кол-во ПОКПУАЕМОЙ ХРЕНИ 1 0.026522
+2022-03-27 16:08:26,209 [DEBUG] Starting new HTTPS connection (1): testnet.binance.vision:443
+2022-03-27 16:08:26,525 [DEBUG] https://testnet.binance.vision:443 "POST /api/v3/order HTTP/1.1" 200 288
+2022-03-27 16:08:26,531 [INFO ] кол-во ПОКПУАЕМОЙ ХРЕНИ 2 0.026522
+2022-03-27 16:08:26,531 [DEBUG] Starting new HTTPS connection (1): testnet.binance.vision:443
+2022-03-27 16:08:26,879 [DEBUG] https://testnet.binance.vision:443 "GET /api/v3/account?timestamp=1648386505000&signature=53a84238dde0b1c464d4c5f28aacdec17f3d196ded24950eb97bd2b1d44d4d7c HTTP/1.1" 200 265
+2022-03-27 16:08:26,894 [DEBUG] ____Баланс ['BTC:1.02652200', 'USDT:8858.33185333']
+2022-03-27 16:08:26,894 [INFO ] Создан ордер на покупку {'symbol': 'BTCUSDT', 'orderId': 12574310, 'orderListId': -1, 'clientOrderId': 'RmByntvsgG63OxsPRnnLW7', 'transactTime': 1648386505943, 'price': '0.00000000', 'origQty': '0.02652200', 'executedQty': '0.02652200', 'cummulativeQuoteQty': '1179.19517244', 'status': 'FILLED', 'timeInForce': 'GTC', 'type': 'MARKET', 'side': 'BUY', 'fills': [{'price': '44461.02000000', 'qty': '0.02652200', 'commission': '0.00000000', 'commissionAsset': 'BTC', 'tradeId': 3933331}]}, сигнал buy
+2022-03-27 16:08:26,910 [INFO ] Job "run_main (trigger: interval[0:50:00], next run at: 2022-03-27 13:58:22 UTC)" executed successfully
+2022-03-27 16:58:22,454 [DEBUG] Looking for jobs to run
+2022-03-27 16:58:22,461 [DEBUG] Next wakeup is due at 2022-03-27 14:48:22.441596+00:00 (in 2999.981767 seconds)
+2022-03-27 16:58:22,463 [INFO ] Running job "run_main (trigger: interval[0:50:00], next run at: 2022-03-27 14:48:22 UTC)" (scheduled at 2022-03-27 13:58:22.441596+00:00)
+2022-03-27 16:58:22,486 [DEBUG] Получаем все неисполненные ордера по БД
+2022-03-27 16:58:22,489 [DEBUG] Получены неисполненные ордера из БД: [('12574310', 'BTCUSDT')]
+2022-03-27 16:58:22,503 [DEBUG] Starting new HTTPS connection (1): testnet.binance.vision:443
+2022-03-27 16:58:23,386 [DEBUG] https://testnet.binance.vision:443 "GET /api/v3/order?symbol=BTCUSDT&orderId=12574310&timestamp=1648389501000&signature=e8f3422d85b9b9d1ffde0ca3f85101d2baa7ad333d2fa53ae5f6e493fb2f3b95 HTTP/1.1" 200 271
+2022-03-27 16:58:23,390 [DEBUG] 18, -- длина словаря stock_order_data --
+2022-03-27 16:58:23,391 [DEBUG] Состояние ордера 12574310 - FILLED
+2022-03-27 16:58:23,391 [INFO ] 
+                            Ордер 12574310 выполнен, получено 0.02652200.
+                            Создаем ордер на продажу
+                        
+2022-03-27 16:58:23,397 [DEBUG] Starting new HTTPS connection (1): testnet.binance.vision:443
+2022-03-27 16:58:24,272 [DEBUG] https://testnet.binance.vision:443 "GET /api/v3/account?timestamp=1648389502000&signature=19c95a3e97d47f375d08302124f38eb27341cc5472be8da577b5d4dc552a48f8 HTTP/1.1" 200 265
+2022-03-27 16:58:24,276 [DEBUG] Баланс ['BNB:1000.00000000', 'BTC:1.02652200', 'BUSD:10000.00000000', 'ETH:100.00000000', 'LTC:500.00000000', 'TRX:500000.00000000', 'USDT:8858.33185333', 'XRP:50000.00000000']
+2022-03-27 16:58:24,283 [DEBUG] Starting new HTTPS connection (1): testnet.binance.vision:443
+2022-03-27 16:58:25,094 [DEBUG] https://testnet.binance.vision:443 "GET /api/v3/ticker/price?symbol=BTCUSDT HTTP/1.1" 200 45
+2022-03-27 16:58:25,098 [INFO ] 
+                            Изначально было куплено 0.02652200, за вычетом комиссии 0.02652200,
+                            Получится продать только 0.02652200
+                            Нужно получить как минимум 1018.95855766 USDT
+                            Мин. цена (с комиссией) составит 38419.371, после приведения 38419.38000000
+                            Текущая цена рынка 44608.08000000
+                            Итоговая цена продажи: 44608.08000000
+                        
+2022-03-27 16:58:25,103 [DEBUG] Starting new HTTPS connection (1): testnet.binance.vision:443
+2022-03-27 16:58:25,732 [DEBUG] https://testnet.binance.vision:443 "GET /api/v1/klines?symbol=BTCUSDT&interval=1h&limit=1000&startTime=1640998800000 HTTP/1.1" 200 36530
+2022-03-27 16:58:25,976 [INFO ] buy, - ЗНАЧЕНИЕ СИГНАЛА--------------------------
+2022-03-27 16:58:25,977 [DEBUG] Получаем из настроек все пары, по которым нет неисполненных ордеров
+2022-03-27 16:58:25,978 [DEBUG] По всем парам есть неисполненные ордера
+2022-03-27 16:58:25,978 [INFO ] Job "run_main (trigger: interval[0:50:00], next run at: 2022-03-27 14:48:22 UTC)" executed successfully
+2022-03-27 17:39:48,978 [DEBUG] 
+    Текущее время: 2022-03-27 17:39:48 1648391988
+    Время сервера: 2022-03-27 17:39:48 1648391988
+    Разница: 0.00000000 
+    Бот будет работать, как будто сейчас: 2022-03-27 17:39:48 1648391988
+
+2022-03-27 17:39:50,301 [INFO ] Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2022-03-27 17:39:50,303 [INFO ] Added job "run_main" to job store "default"
+2022-03-27 17:39:50,303 [INFO ] Scheduler started
+2022-03-27 17:39:50,303 [DEBUG] Looking for jobs to run
+2022-03-27 17:39:50,304 [DEBUG] Next wakeup is due at 2022-03-27 15:29:50.301819+00:00 (in 2999.996997 seconds)
+2022-03-27 17:46:54,056 [DEBUG] 
+    Текущее время: 2022-03-27 17:46:53 1648392413
+    Время сервера: 2022-03-27 17:46:53 1648392413
+    Разница: 0.00000000 
+    Бот будет работать, как будто сейчас: 2022-03-27 17:46:53 1648392413
+
+2022-03-27 17:46:55,161 [INFO ] Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2022-03-27 17:46:55,163 [INFO ] Added job "run_main" to job store "default"
+2022-03-27 17:46:55,163 [INFO ] Scheduler started
+2022-03-27 17:46:55,164 [DEBUG] Looking for jobs to run
+2022-03-27 17:46:55,164 [DEBUG] Next wakeup is due at 2022-03-27 15:36:55.161026+00:00 (in 2999.997000 seconds)
+2022-03-27 18:36:55,189 [DEBUG] Looking for jobs to run
+2022-03-27 18:36:55,221 [INFO ] Running job "run_main (trigger: interval[0:50:00], next run at: 2022-03-27 15:36:55 UTC)" (scheduled at 2022-03-27 15:36:55.161026+00:00)
+2022-03-27 18:36:55,225 [DEBUG] Next wakeup is due at 2022-03-27 16:26:55.161026+00:00 (in 2999.960592 seconds)
+2022-03-27 18:36:55,256 [DEBUG] Получаем все неисполненные ордера по БД
+2022-03-27 18:36:55,260 [DEBUG] Получены неисполненные ордера из БД: [('12574310', 'BTCUSDT')]
+2022-03-27 18:36:55,304 [DEBUG] Starting new HTTPS connection (1): testnet.binance.vision:443
+2022-03-27 18:36:56,170 [DEBUG] https://testnet.binance.vision:443 "GET /api/v3/order?symbol=BTCUSDT&orderId=12574310&timestamp=1648395414000&signature=b0dcf1e83d5db747465ec78543ace3c72927907f904f76457e00f61129fb9e02 HTTP/1.1" 200 271
+2022-03-27 18:36:56,177 [DEBUG] 18, -- длина словаря stock_order_data --
+2022-03-27 18:36:56,178 [DEBUG] Состояние ордера 12574310 - FILLED
+2022-03-27 18:36:56,180 [INFO ] 
+                            Ордер 12574310 выполнен, получено 0.02652200.
+                            Создаем ордер на продажу
+                        
+2022-03-27 18:36:56,190 [DEBUG] Starting new HTTPS connection (1): testnet.binance.vision:443
+2022-03-27 18:36:57,031 [DEBUG] https://testnet.binance.vision:443 "GET /api/v3/account?timestamp=1648395415000&signature=5353d05fd7129fa6eb1c256e8a3a34938b084683553f0ae1d8cb5c7fdf339d32 HTTP/1.1" 200 265
+2022-03-27 18:36:57,041 [DEBUG] Баланс ['BNB:1000.00000000', 'BTC:1.02652200', 'BUSD:10000.00000000', 'ETH:100.00000000', 'LTC:500.00000000', 'TRX:500000.00000000', 'USDT:8858.33185333', 'XRP:50000.00000000']
+2022-03-27 18:36:57,052 [DEBUG] Starting new HTTPS connection (1): testnet.binance.vision:443
+2022-03-27 18:36:57,906 [DEBUG] https://testnet.binance.vision:443 "GET /api/v3/ticker/price?symbol=BTCUSDT HTTP/1.1" 200 45
+2022-03-27 18:36:57,913 [INFO ] 
+                            Изначально было куплено 0.02652200, за вычетом комиссии 0.02652200,
+                            Получится продать только 0.02652200
+                            Нужно получить как минимум 1018.95855766 USDT
+                            Мин. цена (с комиссией) составит 38419.371, после приведения 38419.38000000
+                            Текущая цена рынка 44796.49000000
+                            Итоговая цена продажи: 44796.49000000
+                        
+2022-03-27 18:36:57,923 [DEBUG] Starting new HTTPS connection (1): testnet.binance.vision:443
+2022-03-27 18:36:58,544 [DEBUG] https://testnet.binance.vision:443 "GET /api/v1/klines?symbol=BTCUSDT&interval=1h&limit=1000&startTime=1640998800000 HTTP/1.1" 200 36644
+2022-03-27 18:36:59,402 [INFO ] buy, - ЗНАЧЕНИЕ СИГНАЛА--------------------------
+2022-03-27 18:36:59,403 [DEBUG] Получаем из настроек все пары, по которым нет неисполненных ордеров
+2022-03-27 18:36:59,407 [DEBUG] По всем парам есть неисполненные ордера
+2022-03-27 18:36:59,409 [INFO ] Job "run_main (trigger: interval[0:50:00], next run at: 2022-03-27 16:26:55 UTC)" executed successfully
+2022-03-27 19:26:55,204 [DEBUG] Looking for jobs to run
+2022-03-27 19:26:55,209 [DEBUG] Next wakeup is due at 2022-03-27 17:16:55.161026+00:00 (in 2999.953974 seconds)
+2022-03-27 19:26:55,210 [INFO ] Running job "run_main (trigger: interval[0:50:00], next run at: 2022-03-27 17:16:55 UTC)" (scheduled at 2022-03-27 16:26:55.161026+00:00)
+2022-03-27 19:26:55,214 [DEBUG] Получаем все неисполненные ордера по БД
+2022-03-27 19:26:55,216 [DEBUG] Получены неисполненные ордера из БД: [('12574310', 'BTCUSDT')]
+2022-03-27 19:26:55,226 [DEBUG] Starting new HTTPS connection (1): testnet.binance.vision:443
+2022-03-27 19:26:55,724 [DEBUG] https://testnet.binance.vision:443 "GET /api/v3/order?symbol=BTCUSDT&orderId=12574310&timestamp=1648398414000&signature=f9c83889edf38e39518b9e722d896657f223d64992c98aa8622dbad4247e6c7c HTTP/1.1" 200 271
+2022-03-27 19:26:55,729 [DEBUG] 18, -- длина словаря stock_order_data --
+2022-03-27 19:26:55,730 [DEBUG] Состояние ордера 12574310 - FILLED
+2022-03-27 19:26:55,733 [INFO ] 
+                            Ордер 12574310 выполнен, получено 0.02652200.
+                            Создаем ордер на продажу
+                        
+2022-03-27 19:26:55,740 [DEBUG] Starting new HTTPS connection (1): testnet.binance.vision:443
+2022-03-27 19:26:56,076 [DEBUG] https://testnet.binance.vision:443 "GET /api/v3/account?timestamp=1648398414000&signature=5cde48c78bc2de99b07eaa6d49e87f2c93d1f797ccd0f2a6d3999fe12862e86d HTTP/1.1" 200 265
+2022-03-27 19:26:56,080 [DEBUG] Баланс ['BNB:1000.00000000', 'BTC:1.02652200', 'BUSD:10000.00000000', 'ETH:100.00000000', 'LTC:500.00000000', 'TRX:500000.00000000', 'USDT:8858.33185333', 'XRP:50000.00000000']
+2022-03-27 19:26:56,084 [DEBUG] Starting new HTTPS connection (1): testnet.binance.vision:443
+2022-03-27 19:26:56,458 [DEBUG] https://testnet.binance.vision:443 "GET /api/v3/ticker/price?symbol=BTCUSDT HTTP/1.1" 200 45
+2022-03-27 19:26:56,462 [INFO ] 
+                            Изначально было куплено 0.02652200, за вычетом комиссии 0.02652200,
+                            Получится продать только 0.02652200
+                            Нужно получить как минимум 1018.95855766 USDT
+                            Мин. цена (с комиссией) составит 38419.371, после приведения 38419.38000000
+                            Текущая цена рынка 44847.46000000
+                            Итоговая цена продажи: 44847.46000000
+                        
+2022-03-27 19:26:56,467 [DEBUG] Starting new HTTPS connection (1): testnet.binance.vision:443
+2022-03-27 19:26:57,099 [DEBUG] https://testnet.binance.vision:443 "GET /api/v1/klines?symbol=BTCUSDT&interval=1h&limit=1000&startTime=1640998800000 HTTP/1.1" 200 36708
+2022-03-27 19:26:57,619 [INFO ] sell, - ЗНАЧЕНИЕ СИГНАЛА--------------------------
+2022-03-27 19:26:57,623 [DEBUG] Starting new HTTPS connection (1): testnet.binance.vision:443
+2022-03-27 19:26:58,005 [DEBUG] https://testnet.binance.vision:443 "POST /api/v3/order HTTP/1.1" 200 290
+2022-03-27 19:26:58,009 [INFO ] sell, - ЗНАЧЕНИЕ СИГНАЛА--------------------------
+2022-03-27 19:26:58,010 [INFO ] Создан ордер на продажу {'symbol': 'BTCUSDT', 'orderId': 12653483, 'orderListId': -1, 'clientOrderId': 'Tz0Rl9LrBr4ggIyVQ25TNg', 'transactTime': 1648398417550, 'price': '0.00000000', 'origQty': '0.02652200', 'executedQty': '0.02652200', 'cummulativeQuoteQty': '1189.45361682', 'status': 'FILLED', 'timeInForce': 'GTC', 'type': 'MARKET', 'side': 'SELL', 'fills': [{'price': '44847.81000000', 'qty': '0.02652200', 'commission': '0.00000000', 'commissionAsset': 'USDT', 'tradeId': 3952189}]}, сигнал sell
+2022-03-27 19:26:58,035 [DEBUG] Получаем из настроек все пары, по которым нет неисполненных ордеров
+2022-03-27 19:26:58,036 [DEBUG] По всем парам есть неисполненные ордера
+2022-03-27 19:26:58,037 [INFO ] Job "run_main (trigger: interval[0:50:00], next run at: 2022-03-27 17:16:55 UTC)" executed successfully
+2022-03-27 20:16:55,185 [DEBUG] Looking for jobs to run
+2022-03-27 20:16:55,187 [DEBUG] Next wakeup is due at 2022-03-27 18:06:55.161026+00:00 (in 2999.974679 seconds)
+2022-03-27 20:16:55,188 [INFO ] Running job "run_main (trigger: interval[0:50:00], next run at: 2022-03-27 18:06:55 UTC)" (scheduled at 2022-03-27 17:16:55.161026+00:00)
+2022-03-27 20:16:55,201 [DEBUG] Получаем все неисполненные ордера по БД
+2022-03-27 20:16:55,202 [DEBUG] Получены неисполненные ордера из БД: [('12653483', 'BTCUSDT')]
+2022-03-27 20:16:55,207 [DEBUG] Starting new HTTPS connection (1): testnet.binance.vision:443
+2022-03-27 20:16:56,071 [DEBUG] https://testnet.binance.vision:443 "GET /api/v3/order?symbol=BTCUSDT&orderId=12653483&timestamp=1648401414000&signature=148dfb800ded5a112c1ca3aaf2e859c140d483fdcbecc11fa34642b940c68448 HTTP/1.1" 200 270
+2022-03-27 20:16:56,076 [DEBUG] 18, -- длина словаря stock_order_data --
+2022-03-27 20:16:56,076 [DEBUG] Состояние ордера 12653483 - FILLED
+2022-03-27 20:16:56,077 [DEBUG] Ордер 12653483 на продажу исполнен
+2022-03-27 20:16:56,084 [DEBUG] Starting new HTTPS connection (1): testnet.binance.vision:443
+2022-03-27 20:16:56,417 [DEBUG] https://testnet.binance.vision:443 "GET /api/v3/account?timestamp=1648401415000&signature=6596e6573d0a52261061388c94c568d923d8c944771b6d283eac1fbe51e1843e HTTP/1.1" 200 259
+2022-03-27 20:16:56,421 [DEBUG] ____Баланс ['BNB:1000.00000000', 'BTC:1.00000000', 'BUSD:10000.00000000', 'ETH:100.00000000', 'LTC:500.00000000', 'TRX:500000.00000000', 'USDT:10047.78547015', 'XRP:50000.00000000']
+2022-03-27 20:16:56,443 [DEBUG] Получаем из настроек все пары, по которым нет неисполненных ордеров
+2022-03-27 20:16:56,444 [DEBUG] Найдены пары, по которым нет неисполненных ордеров: ['BTCUSDT']
+2022-03-27 20:16:56,444 [DEBUG] Работаем с парой BTCUSDT
+2022-03-27 20:16:56,447 [DEBUG] Starting new HTTPS connection (1): testnet.binance.vision:443
+2022-03-27 20:16:57,259 [DEBUG] https://testnet.binance.vision:443 "GET /api/v3/account?timestamp=1648401415000&signature=6596e6573d0a52261061388c94c568d923d8c944771b6d283eac1fbe51e1843e HTTP/1.1" 200 259
+2022-03-27 20:16:57,263 [DEBUG] Баланс ['BTC:1.00000000', 'USDT:10047.78547015']
+2022-03-27 20:16:57,269 [DEBUG] Starting new HTTPS connection (1): testnet.binance.vision:443
+2022-03-27 20:16:57,585 [DEBUG] https://testnet.binance.vision:443 "GET /api/v1/depth?symbol=BTCUSDT&limit=1000 HTTP/1.1" 200 2163
+2022-03-27 20:16:57,589 [DEBUG] 
+                                Средняя цена 38422.91238806, 
+                                после приведения 38422.91000000, 
+                                объем после приведения 0.02600000,
+                                итоговый размер сделки 998.99566000
+                                
+2022-03-27 20:16:57,590 [DEBUG] Рассчитан ордер на покупку(ждем сигнала): кол-во 0.02600000, курс: 38422.91000000
+2022-03-27 20:16:57,595 [DEBUG] Starting new HTTPS connection (1): testnet.binance.vision:443
+2022-03-27 20:16:57,914 [DEBUG] https://testnet.binance.vision:443 "GET /api/v1/klines?symbol=BTCUSDT&interval=1h&limit=1000&startTime=1640998800000 HTTP/1.1" 200 36770
+2022-03-27 20:16:58,447 [INFO ] кол-во ПОКПУАЕМОЙ ХРЕНИ 1 0.026
+2022-03-27 20:16:58,451 [DEBUG] Starting new HTTPS connection (1): testnet.binance.vision:443
+2022-03-27 20:16:58,759 [DEBUG] https://testnet.binance.vision:443 "POST /api/v3/order HTTP/1.1" 200 287
+2022-03-27 20:16:58,763 [INFO ] кол-во ПОКПУАЕМОЙ ХРЕНИ 2 0.026
+2022-03-27 20:16:58,769 [DEBUG] Starting new HTTPS connection (1): testnet.binance.vision:443
+2022-03-27 20:16:59,604 [DEBUG] https://testnet.binance.vision:443 "GET /api/v3/account?timestamp=1648401417000&signature=d392bdfb7eeb1f063719e2fa0655b3a2b2699b3507c59ce306fc7684798b38d8 HTTP/1.1" 200 264
+2022-03-27 20:16:59,613 [DEBUG] ____Баланс ['BTC:1.02600000', 'USDT:8882.40723015']
+2022-03-27 20:16:59,614 [INFO ] Создан ордер на покупку {'symbol': 'BTCUSDT', 'orderId': 12673481, 'orderListId': -1, 'clientOrderId': '3pC1Vz4wMgwZU2N5EbzrgR', 'transactTime': 1648401418362, 'price': '0.00000000', 'origQty': '0.02600000', 'executedQty': '0.02600000', 'cummulativeQuoteQty': '1165.37824000', 'status': 'FILLED', 'timeInForce': 'GTC', 'type': 'MARKET', 'side': 'BUY', 'fills': [{'price': '44822.24000000', 'qty': '0.02600000', 'commission': '0.00000000', 'commissionAsset': 'BTC', 'tradeId': 3957968}]}, сигнал buy
+2022-03-27 20:16:59,631 [INFO ] Job "run_main (trigger: interval[0:50:00], next run at: 2022-03-27 18:06:55 UTC)" executed successfully
+2022-03-27 21:06:55,176 [DEBUG] Looking for jobs to run
+2022-03-27 21:06:55,179 [DEBUG] Next wakeup is due at 2022-03-27 18:56:55.161026+00:00 (in 2999.982785 seconds)
+2022-03-27 21:06:55,179 [INFO ] Running job "run_main (trigger: interval[0:50:00], next run at: 2022-03-27 18:56:55 UTC)" (scheduled at 2022-03-27 18:06:55.161026+00:00)
+2022-03-27 21:06:55,209 [DEBUG] Получаем все неисполненные ордера по БД
+2022-03-27 21:06:55,211 [DEBUG] Получены неисполненные ордера из БД: [('12673481', 'BTCUSDT')]
+2022-03-27 21:06:55,224 [DEBUG] Starting new HTTPS connection (1): testnet.binance.vision:443
+2022-03-27 21:06:56,098 [DEBUG] https://testnet.binance.vision:443 "GET /api/v3/order?symbol=BTCUSDT&orderId=12673481&timestamp=1648404414000&signature=17b7a4db737b213c06c45b2db4c1ac3de373ef1d0fd15d40cd748799a4bcab5c HTTP/1.1" 200 268
+2022-03-27 21:06:56,106 [DEBUG] 18, -- длина словаря stock_order_data --
+2022-03-27 21:06:56,107 [DEBUG] Состояние ордера 12673481 - FILLED
+2022-03-27 21:06:56,108 [INFO ] 
+                            Ордер 12673481 выполнен, получено 0.02600000.
+                            Создаем ордер на продажу
+                        
+2022-03-27 21:06:56,129 [DEBUG] Starting new HTTPS connection (1): testnet.binance.vision:443
+2022-03-27 21:06:56,491 [DEBUG] https://testnet.binance.vision:443 "GET /api/v3/account?timestamp=1648404415000&signature=4ff5f0e4a9264b38f314435bc23a0c0daf789af83977b6601f7282fd9c28de89 HTTP/1.1" 200 264
+2022-03-27 21:06:56,501 [DEBUG] Баланс ['BNB:1000.00000000', 'BTC:1.02600000', 'BUSD:10000.00000000', 'ETH:100.00000000', 'LTC:500.00000000', 'TRX:500000.00000000', 'USDT:8882.40723015', 'XRP:50000.00000000']
+2022-03-27 21:06:56,511 [DEBUG] Starting new HTTPS connection (1): testnet.binance.vision:443
+2022-03-27 21:06:57,375 [DEBUG] https://testnet.binance.vision:443 "GET /api/v3/ticker/price?symbol=BTCUSDT HTTP/1.1" 200 45
+2022-03-27 21:06:57,383 [INFO ] 
+                            Изначально было куплено 0.02600000, за вычетом комиссии 0.02600000,
+                            Получится продать только 0.02600000
+                            Нужно получить как минимум 1018.97557320 USDT
+                            Мин. цена (с комиссией) составит 39191.368200000004, после приведения 39191.37000000
+                            Текущая цена рынка 44936.49000000
+                            Итоговая цена продажи: 44936.49000000
+                        
+2022-03-27 21:06:57,394 [DEBUG] Starting new HTTPS connection (1): testnet.binance.vision:443
+2022-03-27 21:06:57,774 [DEBUG] https://testnet.binance.vision:443 "GET /api/v1/klines?symbol=BTCUSDT&interval=1h&limit=1000&startTime=1640998800000 HTTP/1.1" 200 36829
+2022-03-27 21:06:58,679 [INFO ] sell, - ЗНАЧЕНИЕ СИГНАЛА--------------------------
+2022-03-27 21:06:58,685 [DEBUG] Starting new HTTPS connection (1): testnet.binance.vision:443
+2022-03-27 21:06:59,596 [DEBUG] https://testnet.binance.vision:443 "POST /api/v3/order HTTP/1.1" 200 286
+2022-03-27 21:06:59,604 [INFO ] sell, - ЗНАЧЕНИЕ СИГНАЛА--------------------------
+2022-03-27 21:06:59,605 [INFO ] Создан ордер на продажу {'symbol': 'BTCUSDT', 'orderId': 12693521, 'orderListId': -1, 'clientOrderId': '6XncyM9FhHhO6KGF0AHDiA', 'transactTime': 1648404419207, 'price': '0.00000000', 'origQty': '0.02600000', 'executedQty': '0.02600000', 'cummulativeQuoteQty': '1168.34874000', 'status': 'FILLED', 'timeInForce': 'GTC', 'type': 'MARKET', 'side': 'SELL', 'fills': [{'price': '44936.49000000', 'qty': '0.02600000', 'commission': '0.00000000', 'commissionAsset': 'USDT', 'tradeId': 3962297}]}, сигнал sell
+2022-03-27 21:06:59,670 [DEBUG] Получаем из настроек все пары, по которым нет неисполненных ордеров
+2022-03-27 21:06:59,673 [DEBUG] По всем парам есть неисполненные ордера
+2022-03-27 21:06:59,675 [INFO ] Job "run_main (trigger: interval[0:50:00], next run at: 2022-03-27 18:56:55 UTC)" executed successfully
+2022-03-27 21:56:55,168 [DEBUG] Looking for jobs to run
+2022-03-27 21:56:55,170 [DEBUG] Next wakeup is due at 2022-03-27 19:46:55.161026+00:00 (in 2999.990563 seconds)
+2022-03-27 21:56:55,171 [INFO ] Running job "run_main (trigger: interval[0:50:00], next run at: 2022-03-27 19:46:55 UTC)" (scheduled at 2022-03-27 18:56:55.161026+00:00)
+2022-03-27 21:56:55,200 [DEBUG] Получаем все неисполненные ордера по БД
+2022-03-27 21:56:55,203 [DEBUG] Получены неисполненные ордера из БД: [('12693521', 'BTCUSDT')]
+2022-03-27 21:56:55,214 [DEBUG] Starting new HTTPS connection (1): testnet.binance.vision:443
+2022-03-27 21:56:56,112 [DEBUG] https://testnet.binance.vision:443 "GET /api/v3/order?symbol=BTCUSDT&orderId=12693521&timestamp=1648407414000&signature=70ff5193d10486da2506107ac21e5d4090cefc16bf69d2a59a8f5be0a2b43a5c HTTP/1.1" 200 267
+2022-03-27 21:56:56,121 [DEBUG] 18, -- длина словаря stock_order_data --
+2022-03-27 21:56:56,122 [DEBUG] Состояние ордера 12693521 - FILLED
+2022-03-27 21:56:56,124 [DEBUG] Ордер 12693521 на продажу исполнен
+2022-03-27 21:56:56,137 [DEBUG] Starting new HTTPS connection (1): testnet.binance.vision:443
+2022-03-27 21:56:56,552 [DEBUG] https://testnet.binance.vision:443 "GET /api/v3/account?timestamp=1648407415000&signature=cbf7c34868d9c0a63fa23d75bf287c103ba60dfff2a885742974b63b7bca6a4b HTTP/1.1" 200 259
+2022-03-27 21:56:56,559 [DEBUG] ____Баланс ['BNB:1000.00000000', 'BTC:1.00000000', 'BUSD:10000.00000000', 'ETH:100.00000000', 'LTC:500.00000000', 'TRX:500000.00000000', 'USDT:10050.75597015', 'XRP:50000.00000000']
+2022-03-27 21:56:56,627 [DEBUG] Получаем из настроек все пары, по которым нет неисполненных ордеров
+2022-03-27 21:56:56,629 [DEBUG] Найдены пары, по которым нет неисполненных ордеров: ['BTCUSDT']
+2022-03-27 21:56:56,631 [DEBUG] Работаем с парой BTCUSDT
+2022-03-27 21:56:56,653 [DEBUG] Starting new HTTPS connection (1): testnet.binance.vision:443
+2022-03-27 21:56:57,510 [DEBUG] https://testnet.binance.vision:443 "GET /api/v3/account?timestamp=1648407415000&signature=cbf7c34868d9c0a63fa23d75bf287c103ba60dfff2a885742974b63b7bca6a4b HTTP/1.1" 200 259
+2022-03-27 21:56:57,518 [DEBUG] Баланс ['BTC:1.00000000', 'USDT:10050.75597015']
+2022-03-27 21:56:57,529 [DEBUG] Starting new HTTPS connection (1): testnet.binance.vision:443
+2022-03-27 21:56:57,932 [DEBUG] https://testnet.binance.vision:443 "GET /api/v1/depth?symbol=BTCUSDT&limit=1000 HTTP/1.1" 200 2053
+2022-03-27 21:56:57,941 [DEBUG] 
+                                Средняя цена 38525.16779412, 
+                                после приведения 38525.16000000, 
+                                объем после приведения 0.02593100,
+                                итоговый размер сделки 998.99592396
+                                
+2022-03-27 21:56:57,943 [DEBUG] Рассчитан ордер на покупку(ждем сигнала): кол-во 0.02593100, курс: 38525.16000000
+2022-03-27 21:56:57,954 [DEBUG] Starting new HTTPS connection (1): testnet.binance.vision:443
+2022-03-27 21:56:59,267 [DEBUG] https://testnet.binance.vision:443 "GET /api/v1/klines?symbol=BTCUSDT&interval=1h&limit=1000&startTime=1640998800000 HTTP/1.1" 200 36829
+2022-03-27 21:56:59,865 [INFO ] sell - ЗНАЧЕНИЕ СИГНАЛА. НЕТ СИГНАЛА НА ПОКУПКУ.
+2022-03-27 21:56:59,866 [INFO ] Job "run_main (trigger: interval[0:50:00], next run at: 2022-03-27 19:46:55 UTC)" executed successfully
+2022-03-27 22:46:55,179 [DEBUG] Looking for jobs to run
