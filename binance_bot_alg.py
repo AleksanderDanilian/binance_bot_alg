@@ -621,7 +621,7 @@ from apscheduler.schedulers.background import BackgroundScheduler
 if __name__ == '__main__':
     scheduler = BackgroundScheduler()
     scheduler.configure(timezone=utc)
-    scheduler.add_job(run_main, 'interval', minutes=5)
+    scheduler.add_job(run_main, 'interval', minutes=60)
     scheduler.start()
     print('Press Ctrl+{0} to exit'.format('Break' if os.name == 'nt' else 'C'))
     try:

@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6d49bb4b-ee14-474f-ae82-f11bfaf122c3" name="Changes" comment="no import schedule" />
+    <list default="true" id="6d49bb4b-ee14-474f-ae82-f11bfaf122c3" name="Changes" comment="changed ARIMA, minutes gap = 5">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/binance_bot_alg.py" beforeDir="false" afterPath="$PROJECT_DIR$/binance_bot_alg.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -25,8 +29,10 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/shedule_lib/schedule-1.1.0-py2.py3-none-any.whl" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
@@ -117,7 +123,28 @@
       <option name="project" value="LOCAL" />
       <updated>1648478768444</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="changed ARIMA, minutes gap = 5">
+      <created>1648535439541</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1648535439541</updated>
+    </task>
+    <task id="LOCAL-00003" summary="changed ARIMA, minutes gap = 5">
+      <created>1648535459605</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1648535459605</updated>
+    </task>
+    <task id="LOCAL-00004" summary="changed ARIMA, minutes gap = 5">
+      <created>1648535669533</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1648535669533</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -133,7 +160,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="no import schedule" />
-    <option name="LAST_COMMIT_MESSAGE" value="no import schedule" />
+    <MESSAGE value="changed ARIMA, minutes gap = 5" />
+    <option name="LAST_COMMIT_MESSAGE" value="changed ARIMA, minutes gap = 5" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
