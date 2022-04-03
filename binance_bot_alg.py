@@ -19,6 +19,7 @@ bot = Binance(
     Пропишите пары, на которые будет идти торговля.
     base - это базовая пара (BTC, ETH,  BNB, USDT) - то, что на бинансе пишется в табличке сверху
     quote - это квотируемая валюта. Например, для торгов по паре NEO/USDT базовая валюта USDT, NEO - квотируемая
+    BTCUSDT - signal buy, side buy - покупаем BTC за USDT (base - quote)
 """
 
 pairs = [
@@ -27,10 +28,10 @@ pairs = [
         'quote': 'BTC',
         'offers_amount': 1000,  # Сколько предложений из стакана берем для расчета средней цены
         # Максимум 1000. Допускаются следующие значения:[5, 10, 20, 50, 100, 500, 1000]
-        'spend_sum': 9990,  # Сколько тратить base каждый раз при покупке quote
+        'spend_sum': 5000,  # Сколько тратить base каждый раз при покупке quote
         'profit_markup': 0.02,  # Какой навар нужен с каждой сделки? (0.001 = 0.1%)
         'use_stop_loss': False,  # Нужно ли продавать с убытком при падении цены
-        'stop_loss': 0.1,  # 1% - На сколько должна упасть цена, что бы продавать с убытком
+        'stop_loss': 10,  # 1% - На сколько должна упасть цена, что бы продавать с убытком
     }
 ]
 
@@ -176,6 +177,38 @@ def run_main():
                 log.debug("Состояние ордера {order} - {status}".format(order=order, status=order_status))
                 if order_status == 'NEW':
                     log.debug('Ордер {order} всё еще не выполнен'.format(order=order))
+
+                if order_status == 'EXPIRED':
+                    log.debug('Ордер {order} EXPIRED и всё еще не выполнен'.format(order=order))
+                    order_created = int(orders_info[order]['buy_created'])
+                    time_passed = int(time.time()) - order_created
+                    log.info("""Ордер {order} пора отменять, прошло {passed:0.1f} сек.""".format(
+                        order=order, passed=time_passed
+                    ))
+                    # Отменяем ордер на бирже
+                    cancel = bot.cancelOrder(
+                        symbol=orders_info[order]['order_pair'],
+                        orderId=order
+                    )
+                    # Если удалось отменить ордер, скидываем информацию в БД
+                    if 'orderId' in cancel:
+
+                        log.info("Ордер {order} был успешно отменен".format(order=order))
+                        cursor.execute(
+                            """
+                              UPDATE orders
+                              SET
+                                buy_cancelled = datetime()
+                              WHERE
+                                buy_order_id = :buy_order_id
+                            """, {
+                                'buy_order_id': order
+                            }
+                        )
+
+                        conn.commit()
+                    else:
+                        log.warning("Не удалось отменить ордер: {cancel}".format(cancel=cancel))
 
                 # Если ордер на покупку
                 if orders_info[order]['order_type'] == 'buy':
@@ -479,7 +512,7 @@ def run_main():
                 log.debug("Баланс {balance}".format(
                     balance=["{k}:{bal:0.8f}".format(k=k, bal=balances[k]) for k in balances]))
                 # Если баланс позволяет торговать - выше лимитов биржи и выше указанной суммы в настройках
-                if balances[pair_obj['base']] >= pair_obj['spend_sum']:
+                if balances[pair_obj['base']] >= 0: #pair_obj['spend_sum']:
                     # Получаем информацию по предложениям из стакана, в кол-ве указанном в настройках
                     offers = bot.depth(
                         symbol=pair_name,
@@ -495,7 +528,11 @@ def run_main():
                         # Среднюю цену приводим к требованиям биржи о кратности
                         my_need_price = adjust_to_step(avg_price, CURR_LIMITS['filters'][0]['tickSize'])
                         # Рассчитываем кол-во, которое можно купить, и тоже приводим его к кратному значению (не продает 100%)
-                        my_amount = adjust_to_step(0.1 * pair_obj['spend_sum'] / my_need_price,
+                        curr_rate = float(bot.tickerPrice(symbol='BTCUSDT')['price'])
+                        log.debug(f'curr_rate ___ {curr_rate}')
+                        # my_amount = adjust_to_step(pair_obj['spend_sum'] / my_need_price,
+                        #                            CURR_LIMITS['filters'][2]['stepSize'])
+                        my_amount = adjust_to_step(0.95*balances[pair_obj['base']]/curr_rate,
                                                    CURR_LIMITS['filters'][2]['stepSize'])
                         # Если в итоге получается объем торгов меньше минимально разрешенного, то ругаемся и не создаем ордер
                         if my_amount < float(CURR_LIMITS['filters'][2]['stepSize']) or my_amount < float(
@@ -534,13 +571,13 @@ def run_main():
                             ))
                         log.debug(
                             'Рассчитан ордер на покупку(ждем сигнала): кол-во {amount:0.8f}, курс: {rate:0.8f}'.format(
-                                amount=my_amount, rate=my_need_price)
+                                amount=my_amount, rate=curr_rate)
                         )
                         # Отправляем команду на бирже о создании ордера на покупку с рассчитанными параметрами
 
                         signal = bot.get_signal()
                         if signal == 'buy':
-                            log.info(f'кол-во ПОКПУАЕМОЙ ХРЕНИ 1 {my_amount}')
+                            log.info(f'кол-во ПОКПУАЕМОЙ ХРЕНИ 1 {my_amount}, пара - {pair_name}')
                             new_order = bot.createOrder(
                                 symbol=pair_name,
                                 recvWindow=5000,
@@ -549,7 +586,7 @@ def run_main():
                                 quantity="{quantity:0.{precision}f}".format(
                                     quantity=my_amount, precision=CURR_LIMITS['baseAssetPrecision']
                                 ))
-                            log.info(f'кол-во ПОКПУАЕМОЙ ХРЕНИ 2 {my_amount}')
+                            log.info(f'кол-во ПОКПУАЕМОЙ ХРЕНИ 2 {my_amount}, пара - {pair_name}')
                             balances = {
                                 balance['asset']: float(balance['free']) for balance in bot.account()['balances']
                                 if balance['asset'] in [pair_obj['base'], pair_obj['quote']]
@@ -609,25 +646,22 @@ def run_main():
         conn.close()
 
 
-# while True:
-#     schedule.every(10).minutes.do(run_main)
-
 import time
 import os
 from pytz import utc
 from apscheduler.schedulers.background import BackgroundScheduler
 
-
 if __name__ == '__main__':
-    scheduler = BackgroundScheduler()
-    scheduler.configure(timezone=utc)
-    scheduler.add_job(run_main, 'interval', minutes=60)
-    scheduler.start()
-    print('Press Ctrl+{0} to exit'.format('Break' if os.name == 'nt' else 'C'))
-    try:
-        # This is here to simulate application activity (which keeps the main thread alive).
-        while True:
-            time.sleep(5)
-    except (KeyboardInterrupt, SystemExit):
-        # Not strictly necessary if daemonic mode is enabled but should be done if possible
-        scheduler.shutdown()
+    if time.localtime().tm_min < 60:
+        scheduler = BackgroundScheduler()
+        scheduler.configure(timezone=utc)
+        scheduler.add_job(run_main, 'interval', minutes=5)
+        scheduler.start()
+        print('Press Ctrl+{0} to exit'.format('Break' if os.name == 'nt' else 'C'))
+        try:
+            # This is here to simulate application activity (which keeps the main thread alive).
+            while True:
+                time.sleep(5)
+        except (KeyboardInterrupt, SystemExit):
+            # Not strictly necessary if daemonic mode is enabled but should be done if possible
+            scheduler.shutdown()
