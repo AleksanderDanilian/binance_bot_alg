@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6d49bb4b-ee14-474f-ae82-f11bfaf122c3" name="Changes" comment="fixed my amount and spend_sum - line 501">
-      <change afterPath="$PROJECT_DIR$/my_bot.py" afterDir="false" />
+    <list default="true" id="6d49bb4b-ee14-474f-ae82-f11bfaf122c3" name="Changes" comment="fixed my amount and spend_sum - line 501&#10;added order_status &quot;expired&quot; - line 181&#10;new file - my_bot.py">
+      <change afterPath="$PROJECT_DIR$/get_logs.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my_bot2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/binance_alg.db" beforeDir="false" afterPath="$PROJECT_DIR$/binance_alg.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/binance_bot_alg.py" beforeDir="false" afterPath="$PROJECT_DIR$/binance_bot_alg.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/binance.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/binance.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -42,8 +42,13 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/shedule_lib/schedule-1.1.0-py2.py3-none-any.whl" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\ale-d\OneDrive\Рабочий стол\binance_bot_alg" />
+    </key>
   </component>
   <component name="RunManager" selected="Python.my_bot">
     <configuration name="binance_bot_alg (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
@@ -182,7 +187,14 @@
       <option name="project" value="LOCAL" />
       <updated>1648549781210</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="fixed my amount and spend_sum - line 501&#10;added order_status &quot;expired&quot; - line 181&#10;new file - my_bot.py">
+      <created>1648966482284</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1648966482284</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -202,7 +214,8 @@
     <MESSAGE value="changed ARIMA, minutes gap = 5" />
     <MESSAGE value="minutes gap = 60" />
     <MESSAGE value="fixed my amount and spend_sum - line 501" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed my amount and spend_sum - line 501" />
+    <MESSAGE value="fixed my amount and spend_sum - line 501&#10;added order_status &quot;expired&quot; - line 181&#10;new file - my_bot.py" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed my amount and spend_sum - line 501&#10;added order_status &quot;expired&quot; - line 181&#10;new file - my_bot.py" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

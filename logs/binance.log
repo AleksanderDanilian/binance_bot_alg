@@ -13648,3 +13648,114 @@ TypeError: can't multiply sequence by non-int of type 'float'
     Разница: 1.00000000 
     Бот будет работать, как будто сейчас: 2022-04-02 15:10:25 1648901425
 
+2022-04-10 13:43:07,090 [DEBUG] 
+    Текущее время: 2022-04-10 13:43:06 1649587386
+    Время сервера: 2022-04-10 13:43:07 1649587387
+    Разница: 1.00000000 
+    Бот будет работать, как будто сейчас: 2022-04-10 13:43:07 1649587387
+
+2022-04-10 19:01:34,338 [DEBUG] 
+    Текущее время: 2022-04-10 19:01:33 1649606493
+    Время сервера: 2022-04-10 19:01:34 1649606494
+    Разница: 1.00000000 
+    Бот будет работать, как будто сейчас: 2022-04-10 19:01:34 1649606494
+
+2022-04-10 19:01:35,788 [INFO ] Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2022-04-10 19:01:35,793 [INFO ] Added job "main" to job store "default"
+2022-04-10 19:01:35,793 [INFO ] Scheduler started
+2022-04-10 19:01:35,794 [DEBUG] Looking for jobs to run
+2022-04-10 19:01:35,794 [DEBUG] Next wakeup is due at 2022-04-10 17:01:35.788579+00:00 (in 3599.994004 seconds)
+2022-04-10 20:01:35,823 [DEBUG] Looking for jobs to run
+2022-04-10 20:01:35,870 [INFO ] Running job "main (trigger: interval[1:00:00], next run at: 2022-04-10 17:01:35 UTC)" (scheduled at 2022-04-10 17:01:35.788579+00:00)
+2022-04-10 20:01:35,879 [DEBUG] Next wakeup is due at 2022-04-10 18:01:35.788579+00:00 (in 3599.944405 seconds)
+2022-04-10 20:01:35,946 [DEBUG] Starting new HTTPS connection (1): testnet.binance.vision:443
+2022-04-10 20:01:36,835 [DEBUG] https://testnet.binance.vision:443 "GET /api/v3/allOrders?symbol=BTCUSDT&timestamp=1649610095000&signature=b70506c3621d544e56c01f98490d197c20c22547ee2ea6d96591130e5a1b0adc HTTP/1.1" 200 2095
+2022-04-10 20:01:36,852 [DEBUG] Starting new HTTPS connection (1): testnet.binance.vision:443
+2022-04-10 20:01:37,191 [DEBUG] https://testnet.binance.vision:443 "GET /api/v3/allOrders?symbol=BTCUSDT&timestamp=1649610096000&signature=521ca2ce7898b83fd0ebd57ee00bcbac947e4a4eb6c25bd38551e0e7691d998a HTTP/1.1" 200 2095
+2022-04-10 20:01:37,216 [DEBUG] Starting new HTTPS connection (1): testnet.binance.vision:443
+2022-04-10 20:01:37,558 [DEBUG] https://testnet.binance.vision:443 "GET /api/v3/allOrders?symbol=BTCUSDT&timestamp=1649610097000&signature=9fc1186c4b288348e7e27479c067e66a2607cbd892bc620021b128f53c938119 HTTP/1.1" 200 2095
+2022-04-10 20:01:37,576 [DEBUG] Starting new HTTPS connection (1): testnet.binance.vision:443
+2022-04-10 20:01:37,903 [DEBUG] https://testnet.binance.vision:443 "DELETE /api/v3/order HTTP/1.1" 200 254
+2022-04-10 20:01:37,930 [DEBUG] Starting new HTTPS connection (1): testnet.binance.vision:443
+2022-04-10 20:01:38,294 [DEBUG] https://testnet.binance.vision:443 "GET /api/v3/account?timestamp=1649610097000&signature=c2d2dd92abe12618c840fec2975aeb21844866e7731145ff14df34cecaf23dc5 HTTP/1.1" 200 259
+2022-04-10 20:01:38,311 [DEBUG] Starting new HTTPS connection (1): testnet.binance.vision:443
+2022-04-10 20:01:38,646 [DEBUG] https://testnet.binance.vision:443 "GET /api/v1/exchangeInfo HTTP/1.1" 200 1111
+2022-04-10 20:01:38,651 [INFO ] состояние счета - {'XRP': '50000.00000000', 'USDT': '51626.32440103', 'TRX': '500000.00000000', 'LTC': '500.00000000', 'ETH': '100.00000000', 'BUSD': '10000.00000000', 'BTC': '0.00000000', 'BNB': '1000.00000000'}
+2022-04-10 20:01:38,657 [DEBUG] Starting new HTTPS connection (1): testnet.binance.vision:443
+2022-04-10 20:01:38,974 [DEBUG] https://testnet.binance.vision:443 "GET /api/v1/klines?symbol=BTCUSDT&interval=1h&limit=1000&startTime=1640998800000 HTTP/1.1" 200 6557
+2022-04-10 20:01:39,859 [INFO ] sell, - ЗНАЧЕНИЕ СИГНАЛА--------------------------
+2022-04-10 20:01:39,861 [INFO ] Получили сигнал к продаже BTC, но он и так продан
+2022-04-10 20:01:39,861 [INFO ] состояние счета - {'XRP': '50000.00000000', 'USDT': '51626.32440103', 'TRX': '500000.00000000', 'LTC': '500.00000000', 'ETH': '100.00000000', 'BUSD': '10000.00000000', 'BTC': '0.00000000', 'BNB': '1000.00000000'}
+2022-04-10 20:01:39,861 [INFO ] Job "main (trigger: interval[1:00:00], next run at: 2022-04-10 18:01:35 UTC)" executed successfully
+2022-04-10 21:01:35,870 [DEBUG] Looking for jobs to run
+2022-04-10 21:01:35,877 [DEBUG] Next wakeup is due at 2022-04-10 19:01:35.788579+00:00 (in 3599.914552 seconds)
+2022-04-10 21:01:35,879 [INFO ] Running job "main (trigger: interval[1:00:00], next run at: 2022-04-10 19:01:35 UTC)" (scheduled at 2022-04-10 18:01:35.788579+00:00)
+2022-04-10 21:01:35,902 [DEBUG] Starting new HTTPS connection (1): testnet.binance.vision:443
+2022-04-10 21:01:36,595 [DEBUG] https://testnet.binance.vision:443 "GET /api/v3/allOrders?symbol=BTCUSDT&timestamp=1649613695000&signature=fe0f0909cb1f6cdb320933549afd09e1416bfcc6a6215795947401132f994ec0 HTTP/1.1" 200 2091
+2022-04-10 21:01:36,619 [DEBUG] Starting new HTTPS connection (1): testnet.binance.vision:443
+2022-04-10 21:01:37,203 [DEBUG] https://testnet.binance.vision:443 "GET /api/v3/allOrders?symbol=BTCUSDT&timestamp=1649613696000&signature=fdc7c9eb9b3c26f6baeb3864b69554921891220707c8720a64d58ee943fa8a73 HTTP/1.1" 200 2091
+2022-04-10 21:01:37,226 [DEBUG] Starting new HTTPS connection (1): testnet.binance.vision:443
+2022-04-10 21:01:37,635 [DEBUG] https://testnet.binance.vision:443 "GET /api/v3/allOrders?symbol=BTCUSDT&timestamp=1649613697000&signature=8e7a0251906568cab0739a563e298c7b04712eb8e868d8d0f9d89472493236fb HTTP/1.1" 200 2091
+2022-04-10 21:01:37,648 [INFO ] Нет ордеров для отмены
+2022-04-10 21:01:37,663 [DEBUG] Starting new HTTPS connection (1): testnet.binance.vision:443
+2022-04-10 21:01:38,292 [DEBUG] https://testnet.binance.vision:443 "GET /api/v3/account?timestamp=1649613697000&signature=bcb22d111e34837ae483f13452bd652538a0426a89f42cc94d73844d26c74929 HTTP/1.1" 200 259
+2022-04-10 21:01:38,303 [DEBUG] Starting new HTTPS connection (1): testnet.binance.vision:443
+2022-04-10 21:01:39,044 [DEBUG] https://testnet.binance.vision:443 "GET /api/v1/exchangeInfo HTTP/1.1" 200 1112
+2022-04-10 21:01:39,048 [INFO ] состояние счета - {'XRP': '50000.00000000', 'USDT': '51626.32440103', 'TRX': '500000.00000000', 'LTC': '500.00000000', 'ETH': '100.00000000', 'BUSD': '10000.00000000', 'BTC': '0.00000000', 'BNB': '1000.00000000'}
+2022-04-10 21:01:39,055 [DEBUG] Starting new HTTPS connection (1): testnet.binance.vision:443
+2022-04-10 21:01:39,714 [DEBUG] https://testnet.binance.vision:443 "GET /api/v1/klines?symbol=BTCUSDT&interval=1h&limit=1000&startTime=1640998800000 HTTP/1.1" 200 6626
+2022-04-10 21:01:40,173 [INFO ] buy, - ЗНАЧЕНИЕ СИГНАЛА--------------------------
+2022-04-10 21:01:40,182 [DEBUG] Starting new HTTPS connection (1): testnet.binance.vision:443
+2022-04-10 21:01:40,685 [DEBUG] https://testnet.binance.vision:443 "GET /api/v3/ticker/price?symbol=BTCUSDT HTTP/1.1" 200 45
+2022-04-10 21:01:40,714 [DEBUG] Starting new HTTPS connection (1): testnet.binance.vision:443
+2022-04-10 21:01:41,205 [DEBUG] https://testnet.binance.vision:443 "GET /api/v3/ticker/price?symbol=BTCUSDT HTTP/1.1" 200 45
+2022-04-10 21:01:41,236 [DEBUG] Starting new HTTPS connection (1): testnet.binance.vision:443
+2022-04-10 21:01:41,809 [DEBUG] https://testnet.binance.vision:443 "GET /api/v3/ticker/price?symbol=BTCUSDT HTTP/1.1" 200 45
+2022-04-10 21:01:41,831 [DEBUG] Starting new HTTPS connection (1): testnet.binance.vision:443
+2022-04-10 21:01:42,262 [DEBUG] https://testnet.binance.vision:443 "POST /api/v3/order HTTP/1.1" 200 125
+2022-04-10 21:01:42,273 [INFO ] Создали ордер на покупку BTC 1.136844
+2022-04-10 21:01:42,274 [INFO ] состояние счета - {'XRP': '50000.00000000', 'USDT': '51626.32440103', 'TRX': '500000.00000000', 'LTC': '500.00000000', 'ETH': '100.00000000', 'BUSD': '10000.00000000', 'BTC': '0.00000000', 'BNB': '1000.00000000'}
+2022-04-10 21:01:42,274 [INFO ] Job "main (trigger: interval[1:00:00], next run at: 2022-04-10 19:01:35 UTC)" executed successfully
+2022-04-10 22:01:35,826 [DEBUG] Looking for jobs to run
+2022-04-10 22:01:35,859 [DEBUG] Next wakeup is due at 2022-04-10 20:01:35.788579+00:00 (in 3599.947820 seconds)
+2022-04-10 22:01:35,863 [INFO ] Running job "main (trigger: interval[1:00:00], next run at: 2022-04-10 20:01:35 UTC)" (scheduled at 2022-04-10 19:01:35.788579+00:00)
+2022-04-10 22:01:35,918 [DEBUG] Starting new HTTPS connection (1): testnet.binance.vision:443
+2022-04-10 22:01:36,306 [DEBUG] https://testnet.binance.vision:443 "GET /api/v3/allOrders?symbol=BTCUSDT&timestamp=1649617295000&signature=1e032df36e05e39510b20d48fd48ec3b86633ce2c5f088d010f3e7a26d92f725 HTTP/1.1" 200 2161
+2022-04-10 22:01:36,333 [DEBUG] Starting new HTTPS connection (1): testnet.binance.vision:443
+2022-04-10 22:01:36,668 [DEBUG] https://testnet.binance.vision:443 "GET /api/v3/allOrders?symbol=BTCUSDT&timestamp=1649617296000&signature=12c9ab9ecbc56e305eaeb51527453c2d3010c3e2dbf1a3cbec362866bfcb9e0a HTTP/1.1" 200 2161
+2022-04-10 22:01:36,691 [DEBUG] Starting new HTTPS connection (1): testnet.binance.vision:443
+2022-04-10 22:01:37,258 [DEBUG] https://testnet.binance.vision:443 "GET /api/v3/allOrders?symbol=BTCUSDT&timestamp=1649617296000&signature=12c9ab9ecbc56e305eaeb51527453c2d3010c3e2dbf1a3cbec362866bfcb9e0a HTTP/1.1" 200 2161
+2022-04-10 22:01:37,281 [DEBUG] Starting new HTTPS connection (1): testnet.binance.vision:443
+2022-04-10 22:01:37,873 [DEBUG] https://testnet.binance.vision:443 "DELETE /api/v3/order HTTP/1.1" 200 264
+2022-04-10 22:01:37,895 [DEBUG] Starting new HTTPS connection (1): testnet.binance.vision:443
+2022-04-10 22:01:38,487 [DEBUG] https://testnet.binance.vision:443 "GET /api/v3/account?timestamp=1649617297000&signature=dd4d1376a595b6310ed1d3fb75f80be0fee4800357bfb2bdebfd5ee2b8bbf615 HTTP/1.1" 200 260
+2022-04-10 22:01:38,508 [DEBUG] Starting new HTTPS connection (1): testnet.binance.vision:443
+2022-04-10 22:01:39,100 [DEBUG] https://testnet.binance.vision:443 "GET /api/v1/exchangeInfo HTTP/1.1" 200 1112
+2022-04-10 22:01:39,107 [INFO ] состояние счета - {'XRP': '50000.00000000', 'USDT': '51626.32440103', 'TRX': '500000.00000000', 'LTC': '500.00000000', 'ETH': '100.00000000', 'BUSD': '10000.00000000', 'BTC': '0.00000000', 'BNB': '1000.00000000'}
+2022-04-10 22:01:39,115 [DEBUG] Starting new HTTPS connection (1): testnet.binance.vision:443
+2022-04-10 22:01:39,619 [DEBUG] https://testnet.binance.vision:443 "GET /api/v1/klines?symbol=BTCUSDT&interval=1h&limit=1000&startTime=1640998800000 HTTP/1.1" 200 6682
+2022-04-10 22:01:39,886 [INFO ] sell, - ЗНАЧЕНИЕ СИГНАЛА--------------------------
+2022-04-10 22:01:39,886 [INFO ] Получили сигнал к продаже BTC, но он и так продан
+2022-04-10 22:01:39,886 [INFO ] состояние счета - {'XRP': '50000.00000000', 'USDT': '51626.32440103', 'TRX': '500000.00000000', 'LTC': '500.00000000', 'ETH': '100.00000000', 'BUSD': '10000.00000000', 'BTC': '0.00000000', 'BNB': '1000.00000000'}
+2022-04-10 22:01:39,887 [INFO ] Job "main (trigger: interval[1:00:00], next run at: 2022-04-10 20:01:35 UTC)" executed successfully
+2022-04-11 08:01:36,088 [DEBUG] Looking for jobs to run
+2022-04-11 08:01:36,098 [DEBUG] Next wakeup is due at 2022-04-11 06:01:35.788579+00:00 (in 3599.694718 seconds)
+2022-04-11 08:01:36,099 [INFO ] Running job "main (trigger: interval[1:00:00], next run at: 2022-04-11 06:01:35 UTC)" (scheduled at 2022-04-11 05:01:35.788579+00:00)
+2022-04-11 08:01:36,109 [DEBUG] Starting new HTTPS connection (1): testnet.binance.vision:443
+2022-04-11 08:01:36,588 [DEBUG] https://testnet.binance.vision:443 "GET /api/v3/allOrders?symbol=BTCUSDT&timestamp=1649653296000&signature=0162f6167c619238c4b75c6cdcfa8918cd5c34973ac1a595787baaef6252a78f HTTP/1.1" 200 2155
+2022-04-11 08:01:36,598 [DEBUG] Starting new HTTPS connection (1): testnet.binance.vision:443
+2022-04-11 08:01:37,459 [DEBUG] https://testnet.binance.vision:443 "GET /api/v3/allOrders?symbol=BTCUSDT&timestamp=1649653296000&signature=0162f6167c619238c4b75c6cdcfa8918cd5c34973ac1a595787baaef6252a78f HTTP/1.1" 200 2155
+2022-04-11 08:01:37,466 [DEBUG] Starting new HTTPS connection (1): testnet.binance.vision:443
+2022-04-11 08:01:38,264 [DEBUG] https://testnet.binance.vision:443 "GET /api/v3/allOrders?symbol=BTCUSDT&timestamp=1649653297000&signature=50f44ca993997e209b5b47109eab6ccbcca3360ca766bb3558eec3ab945d86fd HTTP/1.1" 200 2155
+2022-04-11 08:01:38,268 [INFO ] Нет ордеров для отмены
+2022-04-11 08:01:38,272 [DEBUG] Starting new HTTPS connection (1): testnet.binance.vision:443
+2022-04-11 08:01:38,593 [DEBUG] https://testnet.binance.vision:443 "GET /api/v3/account?timestamp=1649653298000&signature=7351fadece18c96e331e2c0ccea7ec57ddda181ecd818939980c68e1c09fec86 HTTP/1.1" 200 260
+2022-04-11 08:01:38,601 [DEBUG] Starting new HTTPS connection (1): testnet.binance.vision:443
+2022-04-11 08:01:38,907 [DEBUG] https://testnet.binance.vision:443 "GET /api/v1/exchangeInfo HTTP/1.1" 200 1113
+2022-04-11 08:01:38,914 [INFO ] состояние счета - {'XRP': '50000.00000000', 'USDT': '51626.32440103', 'TRX': '500000.00000000', 'LTC': '500.00000000', 'ETH': '100.00000000', 'BUSD': '10000.00000000', 'BTC': '0.00000000', 'BNB': '1000.00000000'}
+2022-04-11 08:01:38,918 [DEBUG] Starting new HTTPS connection (1): testnet.binance.vision:443
+2022-04-11 08:01:39,358 [DEBUG] https://testnet.binance.vision:443 "GET /api/v1/klines?symbol=BTCUSDT&interval=1h&limit=1000&startTime=1640998800000 HTTP/1.1" 200 7312
+2022-04-11 08:01:39,506 [INFO ] sell, - ЗНАЧЕНИЕ СИГНАЛА--------------------------
+2022-04-11 08:01:39,506 [INFO ] Получили сигнал к продаже BTC, но он и так продан
+2022-04-11 08:01:39,506 [INFO ] состояние счета - {'XRP': '50000.00000000', 'USDT': '51626.32440103', 'TRX': '500000.00000000', 'LTC': '500.00000000', 'ETH': '100.00000000', 'BUSD': '10000.00000000', 'BTC': '0.00000000', 'BNB': '1000.00000000'}
+2022-04-11 08:01:39,506 [INFO ] Job "main (trigger: interval[1:00:00], next run at: 2022-04-11 06:01:35 UTC)" executed successfully
