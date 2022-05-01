@@ -1,3 +1,5 @@
+# Реализуем Stop Loss здесь на buy
+
 import logging
 from collections import ChainMap
 import time
@@ -9,15 +11,10 @@ from datetime import datetime
 
 from binance_api_alg import Binance
 
-# bot = Binance(
-#     API_KEY='ruoVDugC5CHZC846qa77I83gl1mTKElRqCsIfhJKiJD93TWnN8Zq1voPJV2mUurd',
-#     API_SECRET='jdpXb205J4WzKylHCh6QJmUHfpwWWJhkvAXowXJ7zsiwbAGP7kgvU1EWEKkwT2y6'
-# ) # тестовый аккаунт
-
 bot = Binance(
-     API_KEY='JdBK7sqbcntboE8sbXOHdasc0WVdg95IISJ34tBQq9LImWJvpSgTVZNKRtPBWxWh',
-     API_SECRET='cdoCGgfevLVyb1LpEzZLhCAayx5DqRXA5QtpiVFGOrr4L7MjtaCXzlMSVZFpA8pW'
- ) # рабочий аккаунт
+    API_KEY='ruoVDugC5CHZC846qa77I83gl1mTKElRqCsIfhJKiJD93TWnN8Zq1voPJV2mUurd',
+    API_SECRET='jdpXb205J4WzKylHCh6QJmUHfpwWWJhkvAXowXJ7zsiwbAGP7kgvU1EWEKkwT2y6'
+)
 
 """
     Пропишите пары, на которые будет идти торговля.
@@ -81,20 +78,14 @@ log.debug("""
 
 
 def main():
-
     for i, order in enumerate(bot.allOrders(symbol='BTCUSDT')):
         if order['status'] == 'FILLED':
             last_filled_id = i
-        if order['status'] == 'NEW':
-            last_new = i
+
     last_order = bot.allOrders(symbol='BTCUSDT')[last_filled_id]
 
-    try:
-        to_cancel_order = bot.allOrders(symbol='BTCUSDT')[last_new]
-        to_cancel_id = to_cancel_order['orderId']
-        bot.cancelOrder(symbol = Trade_params.symbol, orderId = to_cancel_id)
-    except:
-        log.info('Нет ордеров для отмены')
+    bot.cancelAllOpenOrders(symbol = 'BTCUSDT') # в логах выведет ошибку, если нечего отменять
+    log.info('Отменили все открытые ордера, если таковые есть')
 
     balance = [{el['asset']:el['free']} for el in bot.account()['balances']]
     balance = dict(ChainMap(*balance))
@@ -117,7 +108,7 @@ def main():
                 side='SELL',
                 type='STOP_LOSS_LIMIT',
                 timeInForce='GTC',
-                price=round(float(bot.tickerPrice(symbol='BTCUSDT')['price']) * 1.0035, 2),
+                price=round(float(bot.tickerPrice(symbol='BTCUSDT')['price']) * 1.03, 2),
                 stopPrice=round(float(bot.tickerPrice(symbol='BTCUSDT')['price']) * 0.9995, 2),
                 quantity="{quantity:0.{precision}f}".format(
                     quantity=sell_amount, precision=asset_precision
@@ -196,7 +187,7 @@ def main():
                 side='SELL',
                 type='STOP_LOSS_LIMIT',
                 timeInForce='GTC',
-                price=round(float(bot.tickerPrice(symbol='BTCUSDT')['price']) * 1.003, 2),
+                price=round(float(bot.tickerPrice(symbol='BTCUSDT')['price']) * 1.03, 2),
                 stopPrice=round(float(bot.tickerPrice(symbol='BTCUSDT')['price']) * 0.9995, 2),
                 quantity="{quantity:0.{precision}f}".format(
                     quantity=sell_amount, precision=asset_precision
@@ -210,12 +201,41 @@ def main():
             log.info(f'состояние счета - {balance}')
 
 
+def st_loss_func():
+    for i, order in enumerate(bot.allOrders(symbol='BTCUSDT')):
+        if order['status'] == 'FILLED':
+            last_filled_id = i
+
+    last_status = bot.allOrders(symbol='BTCUSDT')[i]['status']
+    last_side = bot.allOrders(symbol='BTCUSDT')[i]['side']
+
+    last_filled_order = bot.allOrders(symbol='BTCUSDT')[last_filled_id]
+
+    if last_filled_order['side'] == 'BUY' and last_status != 'NEW' and last_side != 'SELL':
+        bot.createOrder(
+            symbol='BTCUSDT',
+            recvWindow=5000,
+            side='SELL',
+            type='STOP_LOSS_LIMIT',
+            timeInForce = 'GTC',
+            price = round(float(bot.tickerPrice(symbol='BTCUSDT')['price']) * 1.05, 2),
+            stopPrice=round(float(bot.tickerPrice(symbol='BTCUSDT')['price']) * 0.95, 2),
+            quantity=last_filled_order['executedQty']
+            )
+        log.info(f'создали сейфовый стоп_лосс ордер')
+
+
 if __name__ == '__main__':
-    if time.localtime().tm_min < 10:
+    if time.localtime().tm_min < 53:
         scheduler = BackgroundScheduler()
         scheduler.configure(timezone=utc)
         scheduler.add_job(main, 'interval', minutes=60)
         scheduler.start()
+
+        scheduler_1 = BackgroundScheduler()
+        scheduler_1.configure(timezone=utc)
+        scheduler_1.add_job(st_loss_func, 'interval', minutes=10)
+        scheduler_1.start()
         print('Press Ctrl+{0} to exit'.format('Break' if os.name == 'nt' else 'C'))
         try:
             # This is here to simulate application activity (which keeps the main thread alive).
@@ -224,6 +244,7 @@ if __name__ == '__main__':
         except (KeyboardInterrupt, SystemExit):
             # Not strictly necessary if daemonic mode is enabled but should be done if possible
             scheduler.shutdown()
+            scheduler_1.shutdown()
 
 
 

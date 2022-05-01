@@ -28,6 +28,7 @@ class Binance:
         'testOrder': {'url': 'api/v3/order/test', 'method': 'POST', 'private': True},
         'orderInfo': {'url': 'api/v3/order', 'method': 'GET', 'private': True},
         'cancelOrder': {'url': 'api/v3/order', 'method': 'DELETE', 'private': True},
+        'cancelAllOpenOrders': {'url': 'api/v3/openOrders', 'method': 'DELETE', 'private': True},
         'openOrders': {'url': 'api/v3/openOrders', 'method': 'GET', 'private': True},
         'allOrders': {'url': 'api/v3/allOrders', 'method': 'GET', 'private': True},
         'account': {'url': 'api/v3/account', 'method': 'GET', 'private': True},

@@ -26,15 +26,15 @@ def get_balance(log_file_path='c:/users/ale-d/downloads/logs.txt'):
         for line in file:
             if 'XRP' in line:
                 try:
-                    temp = [line.partition('[')[0][:-5], int(eval(eval(line.partition('\'USDT\': ')[2].rpartition(', \'TRX\'')[0])))]
+                    temp = [line.partition('[')[0][:-5],
+                            int(eval(eval(line.partition('\'USDT\': ')[2].rpartition(', \'TRX\'')[0])))]
                     match_list.append(temp)
                 except:
                     continue
-
 
     file.close()
 
     pprint(match_list)
 
-
-get_balance()
+if __name__ == '__main__':
+    get_balance()

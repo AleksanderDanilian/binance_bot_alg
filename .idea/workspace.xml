@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6d49bb4b-ee14-474f-ae82-f11bfaf122c3" name="Changes" comment="fixed my amount and spend_sum - line 501&#10;added order_status &quot;expired&quot; - line 181&#10;new file - my_bot.py">
-      <change afterPath="$PROJECT_DIR$/get_logs.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my_bot2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
+    <list default="true" id="6d49bb4b-ee14-474f-ae82-f11bfaf122c3" name="Changes" comment="new file - my_bot2.py (stop loss strategy implemented)">
+      <change afterPath="$PROJECT_DIR$/my_bot3.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/binance_api_alg.py" beforeDir="false" afterPath="$PROJECT_DIR$/binance_api_alg.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/get_logs.py" beforeDir="false" afterPath="$PROJECT_DIR$/get_logs.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/binance.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/binance.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -50,7 +50,7 @@
       <recent name="C:\Users\ale-d\OneDrive\Рабочий стол\binance_bot_alg" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.my_bot">
+  <component name="RunManager" selected="Python.my_bot3">
     <configuration name="binance_bot_alg (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Binance_bot" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -85,6 +85,27 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../binance_bot_alg.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="get_logs" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Binance_bot" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/get_logs.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -135,8 +156,31 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="my_bot3" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Binance_bot" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/my_bot3.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.my_bot3" />
+        <item itemvalue="Python.get_logs" />
         <item itemvalue="Python.my_bot" />
         <item itemvalue="Python.binance_bot_alg (1)" />
         <item itemvalue="Python.binance_bot_alg" />
@@ -194,7 +238,14 @@
       <option name="project" value="LOCAL" />
       <updated>1648966482284</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="new file - my_bot2.py (stop loss strategy implemented)">
+      <created>1649660938258</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1649660938258</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -215,7 +266,8 @@
     <MESSAGE value="minutes gap = 60" />
     <MESSAGE value="fixed my amount and spend_sum - line 501" />
     <MESSAGE value="fixed my amount and spend_sum - line 501&#10;added order_status &quot;expired&quot; - line 181&#10;new file - my_bot.py" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed my amount and spend_sum - line 501&#10;added order_status &quot;expired&quot; - line 181&#10;new file - my_bot.py" />
+    <MESSAGE value="new file - my_bot2.py (stop loss strategy implemented)" />
+    <option name="LAST_COMMIT_MESSAGE" value="new file - my_bot2.py (stop loss strategy implemented)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
