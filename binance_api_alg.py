@@ -61,7 +61,8 @@ class Binance:
     def call_api(self, **kwargs):
 
         command = kwargs.pop('command')
-        api_url = 'https://testnet.binance.vision/' + self.methods[command]['url']
+        # api_url = 'https://testnet.binance.vision/' + self.methods[command]['url']
+        api_url = 'https://api.binance.com/' + self.methods[command]['url']
 
         payload = kwargs  # словарь
         headers = {}
