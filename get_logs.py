@@ -31,6 +31,9 @@ def get_balance(log_file_path='c:/users/ale-d/downloads/logs.txt'):
                     match_list.append(temp)
                 except:
                     continue
+        for line in file:
+            if 'sell' in line:
+                print(line)
 
     file.close()
 

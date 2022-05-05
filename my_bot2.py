@@ -15,9 +15,9 @@ from binance_api_alg import Binance
 # ) # тестовый аккаунт
 
 bot = Binance(
-     API_KEY='JdBK7sqbcntboE8sbXOHdasc0WVdg95IISJ34tBQq9LImWJvpSgTVZNKRtPBWxWh',
-     API_SECRET='cdoCGgfevLVyb1LpEzZLhCAayx5DqRXA5QtpiVFGOrr4L7MjtaCXzlMSVZFpA8pW'
- ) # рабочий аккаунт
+     API_KEY='toldByPhn2TqGOkKHksb9igRW2ye0ZgOgd8lz8NrQaXCMAGwTA0Jbfkfym3d8DGU',
+     API_SECRET='XU3x5w6wYeYdFk9n8nJje4BcSpqMSJeUIHNt39muJT8KqJbAKTpDSEGLfK4nhhBy'
+ ) # рабочий аккаунт (new)
 
 """
     Пропишите пары, на которые будет идти торговля.
