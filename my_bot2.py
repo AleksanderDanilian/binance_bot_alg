@@ -83,7 +83,7 @@ log.debug("""
 def main():
     response = bot.allOrders(symbol='BTCUSDT')
     log.info(f'{response} - checking response on allOrders request')
-    for i, order in enumerate(bot.allOrders(symbol='BTCUSDT')):
+    for i, order in enumerate(response):
         if order['status'] == 'FILLED':
             last_filled_id = i
         if order['status'] == 'NEW':
