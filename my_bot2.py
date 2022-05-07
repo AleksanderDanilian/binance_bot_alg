@@ -81,7 +81,8 @@ log.debug("""
 
 
 def main():
-
+    response = bot.allOrders(symbol='BTCUSDT')
+    log.info(f'{response} - checking response on allOrders request')
     for i, order in enumerate(bot.allOrders(symbol='BTCUSDT')):
         if order['status'] == 'FILLED':
             last_filled_id = i
@@ -106,8 +107,10 @@ def main():
     if last_order['status'] == 'FILLED' and last_order['side'] == 'BUY':
         # предыдущий ордер исполнен и покупали BTC. Смотрим сигнал
         log.info(f'состояние счета - {balance}')
-        signal = bot.get_signal()
+        signal, last_date = bot.get_signal()
+
         log.info(f'{signal}, - ЗНАЧЕНИЕ СИГНАЛА--------------------------')
+        log.info(f'{last_date}, last date for forecasting(timestamp)')
         # если сигнал к продаже BTC
         if signal == 'sell':
             sell_amount = adjust_to_step(float(balance['BTC']), step_size)

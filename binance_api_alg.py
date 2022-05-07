@@ -7,6 +7,7 @@ from urllib.parse import urlparse
 import numpy as np
 import requests
 from statsmodels.tsa.arima.model import ARIMA  # было from statsmodels.tsa_arima.model
+import datetime
 
 
 class Binance:
@@ -91,10 +92,13 @@ class Binance:
             print(response.text)
         return response.json()
 
-    def get_signal(self, date_ts=1640998800000, order=(0, 0, 1), symbol="BTCUSDT", interval='1h'):
-        trades = np.array(self.klines(symbol=symbol, interval=interval, limit='1000', startTime=date_ts))[:,
+    def get_signal(self, order=(0, 0, 1), symbol="BTCUSDT", interval='1h'):
+        dt = datetime.datetime.now() - datetime.timedelta(hours=950)
+        ts = datetime.datetime.timestamp(dt) * 1000
+        trades = np.array(self.klines(symbol=symbol, interval=interval, limit='1000', startTime=int(ts)))[:,
                  [1, 4]]  # 4 parameter - close, 1 - open
         trades = trades.astype(float)
+        last_date = np.array(self.klines(symbol=symbol, interval=interval, limit='1000', startTime=int(ts)))[-1, 0]
         avr_trades = [int((val[0] + val[1]) / 2) for val in trades]  # берем среднее по open/close
 
         # чтобы сравнивать pred не с реальными данными, а с pred - нужно создать pred[-2].
@@ -114,4 +118,4 @@ class Binance:
         else:
             signal = 'sell'
 
-        return signal
+        return signal, last_date
