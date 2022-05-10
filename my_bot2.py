@@ -103,6 +103,7 @@ def main():
     ex_info = [el for el in bot.exchangeInfo()['symbols'] if el['symbol'] == 'BTCUSDT']
     step_size = ex_info[0]['filters'][2]['stepSize']
     asset_precision = ex_info[0]['baseAssetPrecision'] # для base и quote величин одинаков
+    log.info(f"{last_order['status']}, - статус последнего ордера; {last_order['side']} - покупали или продавали")
 
     if last_order['status'] == 'FILLED' and last_order['side'] == 'BUY':
         # предыдущий ордер исполнен и покупали BTC. Смотрим сигнал
@@ -135,7 +136,7 @@ def main():
     if last_order['status'] == 'FILLED' and last_order['side'] == 'SELL':
         # предыдущий ордер исполнен и продавали BTC (сейчас USDT на руках). Смотрим сигнал
         log.info(f'состояние счета - {balance}')
-        signal = bot.get_signal()
+        signal, last_date = bot.get_signal()
         log.info(f'{signal}, - ЗНАЧЕНИЕ СИГНАЛА--------------------------')
         # если сигнал к покупке BTC
         if signal == 'buy':
@@ -163,7 +164,7 @@ def main():
         # если ордер был просрочен или отменен по каким-либо причинам, создаем новый
         log.info('предыдущий ордер был просрочен или отменен')
         log.info(f'состояние счета - {balance}')
-        signal = bot.get_signal()
+        signal, last_date = bot.get_signal()
         log.info(f'{signal}, - ЗНАЧЕНИЕ СИГНАЛА--------------------------')
 
         if last_order['side'] == 'BUY' and signal == 'buy':
